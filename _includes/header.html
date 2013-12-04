@@ -1,45 +1,28 @@
 <header>
     <div class="container">
         <div class="profile">
-            <div class="social">
-                <a href="http://twitter.com/tybenz">
-                    <div data-picture data-alt="Twitter">
-                        <div data-src="/img/twitter16.png"></div>
-                        <div data-src="/img/twitter32.png"     data-media="(-webkit-min-device-pixel-ratio: 2)"></div>
-                        <noscript><img src="/img/twitter16.png" alt="Twitter"></noscript>
-                    </div>
-                </a>
-                <a href="http://github.com/tybenz">
-                    <div data-picture data-alt="Github">
-                        <div data-src="/img/octocat16.png"></div>
-                        <div data-src="/img/octocat32.png"     data-media="(-webkit-min-device-pixel-ratio: 2)"></div>
-                        <noscript><img src="/img/octocat16.png" alt="Github"></noscript>
-                    </div>
-                </a>
-            </div>
-            <div class="avatar" data-picture data-alt="avatar">
-                <div data-src="{% include avatar_url %}?s=54"></div>
-                <div data-src="{% include avatar_url %}?s=108" data-media="(-webkit-min-device-pixel-ratio: 2)"></div>
-                <noscript><img src="{% include avatar_url %}?s=54" alt="avatar"></noscript>
-            </div>
+            analyzing
+            the US supreme
+            court
+            <!-- KEEP FOR CSS SPACING -->
         </div>
-        <h5 class="logo"><a href="http://tybenz.com">Tyler Benziger</a></h5>
+        <h5 class="logo"><a href="{{site.baseurl}}">benchmarked</a></h5>
         <nav class="main">
             <ul>
-                {% if page.nav == "blog" %}
-                    <li><a href="http://tybenz.com" class="active">Blog</a></li>
+                {% if page.nav == "one" %}
+                    <li><a href="{{site.baseurl}}" class="active">Intro</a></li>
                 {% else %}
-                    <li><a href="http://tybenz.com">Blog</a></li>
+                    <li><a href="{{site.baseurl}}">Intro</a></li>
                 {% endif %}
-                {% if page.nav == "about" %}
-                <li><a href="http://tybenz.com/about" class="active">About</a></li>
+                {% if page.nav == "two" %}
+                <li><a href="{{site.baseurl}}/analysis.html" class="active">Seeing the Data</a></li>
                 {% else %}
-                <li><a href="http://tybenz.com/about">About</a></li>
+                <li><a href="{{site.baseurl}}/analysis.html">Seeing the Data</a></li>
                 {% endif %}
-                {% if page.nav == "projects" %}
-                <li><a href="http://tybenz.com/projects" class="active">Projects</a></li>
+                {% if page.nav == "three" %}
+                <li><a href="{{site.baseurl}}/preds.html" class="active">Predictions</a></li>
                 {% else %}
-                <li><a href="http://tybenz.com/projects">Projects</a></li>
+                <li><a href="{{site.baseurl}}/preds.html">Predictions</a></li>
                 {% endif %}
             </ul>
         </nav>
@@ -51,20 +34,20 @@
         </div>
         <nav class="subnav">
             <ul>
-                {% if page.subnav == "home" %}
-                    <li><a href="/" class="active">Home</a></li>
+                {% if page.subnav == "one" %}
+                    <li><a href="{{site.baseurl}}/about.html" class="active">about us</a></li>
                 {% else %}
-                    <li><a href="/">Home</a></li>
+                    <li><a href="{{site.baseurl}}/about.html">about us</a></li>
                 {% endif %}
-                {% if page.subnav == "docs" %}
-                    <li><a href="/docs" class="active">Docs</a></li>
+                {% if page.subnav == "two" %}
+                    <li><a href="/to-nb-viewer" class="active">nbviewer[td]</a></li>
                 {% else %}
-                    <li><a href="/docs">Docs</a></li>
+                    <li><a href="/to-nb-viewer">nbviewer[td]</a></li>
                 {% endif %}
-                {% if page.subnav == "download" %}
-                    <li><a href="https://github.com/tybenz/exemplar/archive/master.zip" class="active">Download</a></li>
+                {% if page.subnav == "three" %}
+                    <li><a href="https://github.com/pjbull/the_supremes/" class="active">github</a></li>
                 {% else %}
-                    <li><a href="https://github.com/tybenz/exemplar/archive/master.zip">Download</a></li>
+                    <li><a href="https://github.com/pjbull/the_supremes/">github</a></li>
                 {% endif %}
             </ul>
         </nav>

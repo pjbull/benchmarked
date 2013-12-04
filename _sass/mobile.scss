@@ -10,7 +10,7 @@ $black: #111;
 $darkGrey: #222;
 $grey: #444;
 $lightGrey: #ccc;
-$blue: #6EC5FF;
+$blue: #A31010;
 $indigo: #5EA5FF;
 
 body {
@@ -101,7 +101,7 @@ header nav ul {
 }
 
 header .logo {
-    font-style: italic;
+    color: $blue;
 }
 
 header nav li {
@@ -135,19 +135,19 @@ header .nav-selection {
     background-color: $blue;
 }
 
-header .nav-selection.about {
+header .nav-selection.two {
     width: 44px;
     left: 49px;
 }
 
-header .nav-selection.blog {
+header .nav-selection.one {
     width: 33px;
     left: 0;
 }
 
-header .nav-selection.projects {
-    width: 60px;
-    left: 107px;
+header .nav-selection.three {
+    width: 90px;
+    left: 90px;
 }
 
 header .subnav-selection {
@@ -157,17 +157,17 @@ header .subnav-selection {
   width: 50px;
 }
 
-header .subnav-selection.home {
+header .subnav-selection.one {
   right: 140px;
   width: 42px;
 }
 
-header .subnav-selection.docs {
+header .subnav-selection.two {
   right: 87px;
   width: 35px;
 }
 
-header .subnav-selection.download {
+header .subnav-selection.three {
   right: 0;
   width: 69px;
 }
@@ -177,6 +177,7 @@ header .profile {
     height: 58px;
     max-width: 84px;
     margin-top: 14px;
+    text-align: right;
 }
 
 header .social {
