@@ -13,3 +13,8 @@ Things we need here:
 - Intro Paragraph
 - A Viz or Two
 - Explanation of Rest of Site
+
+```
+def iamcode():
+	return "quoi?"
+```
