@@ -9,13 +9,13 @@ Three gentelmen folk on a mission.
 
 Peter Bull
 ---------
-Sharp-looking hombre
+Vegetarian Dude
 
 ![alt text]({{site.baseurl}}img/pb.jpg "Peter Bull")
 
 Aymen Jaffry
 ---------
-Aymen is dangerous, as you can see
+Bonjour !
 
 ![alt text]({{site.baseurl}}img/aj.jpg "Aymen Jaffry")
 
