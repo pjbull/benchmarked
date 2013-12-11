@@ -10,7 +10,7 @@ layout: default
 Each justice of the Supreme Court is appointed by a President of the United States. Even if this choice is supposed to be the most objective, one may think that the justice was choosen because of his ideological
 closenness to the President's ideas. We try to see if this bias exists and has any impact on the Supreme Court decisions.
 
-###Let's describe first
+###Descriptive Analysis
 
 On each case raised to the Supreme Court, each justice takes a decision and the final decision is the choice of the Majority. A justice can choose between to directions:
 
