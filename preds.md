@@ -26,7 +26,48 @@ Each case in the Spaeth dataset is associated with an 'Issue Area' that describe
 
 ![alt text]({{site.baseurl}}img/pred1_bar_2.png "Title")
 
-```
-def iamcode():
-	return "quoi?"
-```
+Each party is more sensible to its own case types:
+
+* First Amendment, Unions and Criminal Procedures for Democrat-appointed justices
+* Unions, Judicial Power and Attorneys for Republican-appointed justices
+
+Our next step is to find groups among justices and see if those groups separate justices that were appointed by Presidents from different parties. 
+
+###Discovering Groups among Justices
+
+One of the most well-known technique to discover groups among unlbeled data is the K-means clustering algorithm. This algorithm finds group of points based on some features. The features we will be using
+for this clustering task are:
+
+* **Liberal Ratio**: Ratio of Liberal (Vs. Conservative) decisions for each justice,
+* **Opinion Written Ratio**: The ratio of cases where the given justice wrote an opinion. Each justice can or callot write an opinion after a case is voted,
+* **Ratio of Dissent with Majority**: The ratio of cases where the given justice disagreed with the majority vote.
+
+We perform the K-means algorithm on this unlabeled data with a number of clusters varying from 2 to 14. We use the Elbow method to find the "best" number of clusters: it is the threshold after
+which we don't improve significantly the Within Sum of Squares (WSS) (our loss function here). Here is the graph of the WSS function of the number of clusters:
+
+![alt text]({{site.baseurl}}img/pred1_elbow.png "Title")
+
+Our best number of clusters is 4 here. We could have thought that if the Supreme Court is ideologically oriented, then the optimal number of clusters would have been 2. Let's see how Republican/Democrat-appointed
+are divided among the clusters:
+
+![alt text]({{site.baseurl}}img/pred1_kmeans.png "Title")
+
+* **Cluster 1**: 90% of Republicans, 10% of Democrats
+* **Cluster 2**: 22% of Republicans, 56% of Democrats
+* **Cluster 3**: 31% of Republicans, 69% of Democrats
+* **Cluster 4**: 25% of Republicans, 50% of Democrats 
+
+**NB**: Some of the sums does not sum to 100%, because some of the Appointers (i.e. U.S. Presidents) have a different party than the two ones studied here on their Wikipedia page.
+
+The repartition of the justices in the clusters seems not to be the result of an ideological divergence. As you can see in the previous plot, we represented the points in a two-dimension space (while we have three
+different features). We performed a dimensionality reduction using Principal Component Analysis before Clustering the data. It would be interesting to see the importance of each feature in the two
+principal components:
+
+|Features|PC1|PC2|
+|---|---|---|
+|Liberal Ratio|0.999584|0.023069|
+|Dissent Ratio|0.003893|-0.702499|
+|Opinion Writing Ratio|0.028573|-0.711310|
+
+Let's try to confirm those results using another Clustering technique, Hierarchical Clustering.
+This method has a major advantage on the previous one: It optimize by tself the number of clusters. It's a great way to check our results in the previous method. We use the same unlabeled dataset.
