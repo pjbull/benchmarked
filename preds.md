@@ -5,8 +5,16 @@ subnav: three
 layout: default
 ---
 
-##Include our predition results here
-- Predict by Graph structure of table of authorities in briefs
-- Predict by case area of law and political makeup
-- Predict by how case got to supreme court
-- etc., etc.,
+##Is the Supreme Court Ideologically Biased?
+
+We tried to observe some sort of biases in the explanatory analysis in the previous. In this section we analyze if a potential ideological bias exists. To perform 
+
+
+
+![alt text]({{site.baseurl}}img/sc.png "Title")
+
+
+```
+def iamcode():
+	return "quoi?"
+```
