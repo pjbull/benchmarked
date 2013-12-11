@@ -92,7 +92,8 @@ Hierarchical produced four different clusters here., with the following Republic
 
 If we observe the average of the featuers in each of the clusters: 
 
-|Cluster|Dissent Ratio|Liberal Ratio|Opinion Ratio|			
+|Cluster|Dissent Ratio|Liberal Ratio|Opinion Ratio|
+|---|---|---|---|		
 |Cluster 1|0.188383|0.301634|0.191803|
 |Cluster 2|0.207880|0.390014|0.216675|
 |Cluster 3|0.234617|0.684211|0.249562|
