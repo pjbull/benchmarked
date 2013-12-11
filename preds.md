@@ -65,9 +65,9 @@ principal components:
 
 |Features|PC1|PC2|
 |---|---|---|
-|Liberal Ratio|0.999584|0.023069|
-|Dissent Ratio|0.003893|-0.702499|
-|Opinion Writing Ratio|0.028573|-0.711310|
+|Liberal Ratio | 0.999584  |0.023069  |
+|Dissent Ratio  |0.003893  |-0.702499  |
+|Opinion Writing Ratio  |0.028573  |-0.711310  |
 
 Let's try to confirm those results using another Clustering technique, Hierarchical Clustering.
 This method has a major advantage on the previous one: It optimize by tself the number of clusters. It's a great way to check our results in the previous method. We use the same unlabeled dataset.
