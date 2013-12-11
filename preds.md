@@ -10,7 +10,7 @@ layout: default
 Each justice of the Supreme Court is appointed by a President of the United States. Even if this choice is supposed to be the most objective, one may think that the justice was choosen because of his ideological
 closenness to the President's ideas. We try to see if this bias exists and has any impact on the Supreme Court decisions.
 
-###Descriptive Graphs
+###Let's describe first
 
 On each case raised to the Supreme Court, each justice takes a decision and the final decision is the choice of the Majority. A justice can choose between to directions:
 
@@ -69,5 +69,41 @@ principal components:
 |Dissent Ratio  |0.003893  |-0.702499  |
 |Opinion Writing Ratio  |0.028573  |-0.711310  |
 
-Let's try to confirm those results using another Clustering technique, Hierarchical Clustering.
+The first principal component is entirely explained by the Liberal Ratio which is the most discriminative feature we have here. This results seems logical. The Second Principal Component is equally explained
+by the Dissent Ration adn the Opinion Writing. Those figures help us understand the clusters plotted above:
+
+* **Cluster 1 (top)**: Average Liberal Ratio, Low Dissent Ratio, Low Opinion Writting
+* **Cluster 2 (right)**: High Liberal Ratio, Average Dissent Ratio, Average Opinion Writting
+* **Cluster 3 (bottom)**: Average Liberal Ratio, High Dissent Ratio, High Opinion Writting
+* **Cluster 4 (left)**: Low Liberal Ratio, Average Dissent Ratio, Average Opinion Writting
+
+Let's try now to confirm those results using another Clustering technique, Hierarchical Clustering.
 This method has a major advantage on the previous one: It optimize by tself the number of clusters. It's a great way to check our results in the previous method. We use the same unlabeled dataset.
+Let's see what information we can gather from the dendrogram:
+
+![alt text]({{site.baseurl}}img/pred1_hierarchical.png "Title")
+
+Hierarchical produced four different clusters here., with the following Republican/Democrat within percentages:
+
+* **Cluster 1**: 33% of Republicans, 44% of Democrats
+* **Cluster 2**: 38% of Republicans, 62% of Democrats
+* **Cluster 3**: 44% of Republicans, 50% of Democrats
+* **Cluster 4**: 100% of Republicans, 0% of Democrats (only 2 justices)
+
+If we observe the average of the featuers in each of the clusters: 
+
+|Cluster|Dissent Ratio|Liberal Ratio|Opinion Ratio|			
+|Cluster 1|0.188383|0.301634|0.191803|
+|Cluster 2|0.207880|0.390014|0.216675|
+|Cluster 3|0.234617|0.684211|0.249562|
+|Cluster 4|0.211852|0.522745|0.218390|
+
+The liberal ratio are higher in average in clusters 3 and 4 than in clusters 1 and 2. Again it seems like it's the most discriminative feature and it's confirming the first part. the difference of the Dissent and 
+Opinion Writting ratio averages in the clusters are not significative.
+
+###Conclusion
+
+The K-means and Hierarchical clustering algorithms output both 4 different clusters, where Democrats and Republicans are not obviously divided (except for some low-numbered clusters). 
+Ideology positions do not affect obviously the Supreme Court decisions.
+
+
