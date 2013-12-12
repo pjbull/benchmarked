@@ -75,10 +75,10 @@
                     <li><a href="about.html">about us</a></li>
                 
                 
-                    <li><a href="/to-nb-viewer">nbviewer[td]</a></li>
+                    <li><a href="http://nbviewer.ipython.org/github/pjbull/benchmarked/blob/master/Process.ipynb">nbviewer[td]</a></li>
                 
                 
-                    <li><a href="https://github.com/pjbull/the_supremes/" class="active">github</a></li>
+                    <li><a href="https://github.com/pjbull/benchmarked/" class="active">github</a></li>
                 
             </ul>
         </nav>
@@ -91,19 +91,19 @@
           <h1 class="hero">Making Predictions</h1>
           <h2 id='using_the_profiles_of_the_supreme_court_justices'>Using the Profiles of the Supreme Court Justices</h2>
 
-<p>Now that we have a decent understanding of who the Justices are and how they tend to vote, are there any there any insights that can be gleaned from that information obtained from our exploratory analysis? More specifically, can we predict the outcome of Supreme Court rulings based solely on the voting profiles of the Justices reviewing the case.</p>
+<p>Now that we have a decent understanding of who the Justices are and how they tend to vote, we ask: can we predict the outcome of Supreme Court rulings based solely on the voting profiles of the Justices reviewing the case?</p>
 
-<p>The first model we construct is a simply binary decision tree: if a case in a particular issue area is brought forth to be reviewed by the court, then we assume the Justice will vote similar to is past votes in that particular issue area. For example, if a Justice votes conservatively more than 50% of the time on Civil Rights case, than they will likely vote conservatively on the next Civil Rights case they review. Using this logic, we sum the likely direction of each Justices vote and then compare this result to the actual direction of the case. On average, this method yields a 60.4% correct prediction rate.</p>
+<p>The first model we construct is a simply binary decision tree: if a case in a particular issue area is brought forth to be reviewed by the court, then we assume the Justice will vote similar to his or her past votes in that particular issue area. For example, if a Justice votes conservatively more than 50% of the time on Civil Rights case, than they will likely vote conservatively on the next Civil Rights case they review. Using this logic, we sum the likely direction of each Justices vote and then compare this result to the actual direction of the case. On average, this method yields a 60.4% correct prediction rate.</p>
 
-<p>But are there better ways to predict which direction a Justice will vote on a particular? To answer this question we construct two more sophisticated models using random forrest classifier and logistical regression. In order to use a random forrest classifier or logistic regression, we must select features or variable that will help determine the direction of a vote. Using the features of case&#8217;s <a href='http://scdb.wustl.edu/documentation.php?var=lawType'>law type</a>, <a href='http://scdb.wustl.edu/documentation.php?var=certReason'>reason for reviewal</a>, and the <a href='http://scdb.wustl.edu/documentation.php?var=issueArea'>legal issue</a> in question, the <a href='http://scdb.wustl.edu/documentation.php?var=direction'>direction</a> of each Justice&#8217;s vote is predicted. The results of these models are shown in the figure below:</p>
+<p>But are there better ways to predict which direction a Justice will vote? To answer this question we construct two more sophisticated models using random forrest classifier and logistical regression. In order to use a random forrest classifier or logistic regression, we must select features that will help determine the direction of a vote. Using the features of a case&#8217;s <a href='http://scdb.wustl.edu/documentation.php?var=lawType'>law type</a>, <a href='http://scdb.wustl.edu/documentation.php?var=certReason'>reason for review</a>, and the <a href='http://scdb.wustl.edu/documentation.php?var=issueArea'>legal issue</a> in question, the <a href='http://scdb.wustl.edu/documentation.php?var=direction'>direction</a> of each Justice&#8217;s vote is predicted. The results of these models are shown in the figure below:</p>
 
 <p><img alt='alt text' src='img/ROC.png' /></p>
 
 <p>The normalized integral of the ROC curve represents the prediction rates, which in this case are 65% and 66% for the random forest and logistic regression models, respectively.</p>
 
-<p>Success! On average, these more sophisticate models can now predict the direction 5-6% better than just using the previous voting patterns.</p>
+<p>Success! On average, these more sophisticated models can now predict the direction 5-6% better than just using a Justice&#8217;s previous voting patterns.</p>
 
-<p>On a finally note, while one might raise the question of why try to predict direction and not actual outcome, prediction of direction is actually a value result. Each case that is brought forth to be reviewed by the SC has much nuance and actual decisions the court makes has to account for this variability of cases. Thus, to try to attempt to predict the actual decisions would require a fund of knowledge of law and is beyond the scope of this project. However, ultimately each decision that is rendered by the Supreme Court does have a direction of affirming or staying a liberal/conservative issue. Therefore, to someone with the skill set to analyze the case that is before the court and can determine if the central question is liberal or conservative, our model would be an invaluable tool in predicting the outcome the case.</p>
+<p>On a final note, while one might raise the question of why try to predict direction and not actual outcome, prediction of direction is actually a valuable result. Each case that is brought forth to be reviewed by the Supreme Court has much nuance and actual decisions the court makes has to account for this variability of cases. Thus, to try to attempt to predict the actual decisions would require that our model understand the law in a way that is beyond the scope of this project. However, ultimately each decision that is rendered by the Supreme Court does have a direction of affirming or staying a liberal/conservative issue. If we know beforehand whether a victory for the petitioner or repondent would entail a liberal or conservative result, then our model can predict the actual outcome.</p>
         </article>
     </section>
 
@@ -165,32 +165,32 @@
     imgList["kagan"] = new Array();
 
 //Set values for each mouse state
-  imgList["roberts"]["out"] = "img/prof/JGRoberts.png";
+  imgList["roberts"]["out"] = "img/prof/justice.jpg";
   imgList["roberts"]["over"] = "img/prof/JGRoberts.png";
 
-  imgList["scalia"]["out"] = "img/prof/JGRoberts.png";
+  imgList["scalia"]["out"] = "img/prof/justice.jpg";
   imgList["scalia"]["over"] = "img/prof/AScalia.png";
 
-  imgList["kennedy"]["out"] = "img/prof/JGRoberts.png";
+  imgList["kennedy"]["out"] = "img/prof/justice.jpg";
   imgList["kennedy"]["over"] = "img/prof/AKennedy.png";
 
-  imgList["thomas"]["out"] = "img/prof/JGRoberts.png";
+  imgList["thomas"]["out"] = "img/prof/justice.jpg";
   imgList["thomas"]["over"] = "img/prof/CThomas.png";
 
-  imgList["ginsburg"]["out"] = "img/prof/JGRoberts.png";
+  imgList["ginsburg"]["out"] = "img/prof/justice.jpg";
   imgList["ginsburg"]["over"] = "img/prof/RGinsburg.png";
 
-  imgList["breyer"]["out"] = "img/prof/JGRoberts.png";
+  imgList["breyer"]["out"] = "img/prof/justice.jpg";
   imgList["breyer"]["over"] = "img/prof/SBreyer.png";
 
 
-  imgList["alito"]["out"] = "img/prof/JGRoberts.png";
+  imgList["alito"]["out"] = "img/prof/justice.jpg";
   imgList["alito"]["over"] = "img/prof/SAlito.png";
 
-  imgList["sotomayor"]["out"] = "img/prof/JGRoberts.png";
+  imgList["sotomayor"]["out"] = "img/prof/justice.jpg";
   imgList["sotomayor"]["over"] = "img/prof/SSotomayor.png";
 
-  imgList["kagan"]["out"] = "img/prof/JGRoberts.png";
+  imgList["kagan"]["out"] = "img/prof/justice.jpg";
   imgList["kagan"]["over"] = "img/prof/EKagan.png";
 
 

@@ -41,7 +41,7 @@ Supreme Court Justices are appointed to the court for life. Ostensibly, immunity
 		</td>
 
 		<td>
-			<img id="jprof" src="{{site.baseurl}}img/prof/JGRoberts.png"/>
+			<img id="jprof" src="{{site.baseurl}}img/prof/justice.jpg"/>
 		</td>
 		
 		<!-- REPS -->

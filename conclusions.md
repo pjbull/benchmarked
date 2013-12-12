@@ -5,6 +5,8 @@ subnav: two
 layout: default
 ---
 
+![alt text]({{site.baseurl}}img/sc.png "Title")
+
 ##Exploratory Summary
 Analyzing the Supreme Court is not  a trivial task. There is much nuance within the judicial system not only in how Justices review cases but also how lawyers present citations/arguments to support these cases. However, we have shown that it is still possible to glean interesting insights into the how the Supreme Court operates. Specifically, we have demonstrated that, while there is some variance in what cases reach the Supreme Court, there does not appear to bias in the how the Supreme Court selects cases for review. Based on our analysis of the data, the most likely case to reach the Supreme Court would originate in California, have involved a state-level Supreme Court, and concern a criminal defendant's civil rights. Furthermore, the most likely outcome of a review would be to reverse the decision made by the source, Federal Appeals court. 
 

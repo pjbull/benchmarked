@@ -75,10 +75,10 @@
                     <li><a href="about.html">about us</a></li>
                 
                 
-                    <li><a href="/to-nb-viewer">nbviewer[td]</a></li>
+                    <li><a href="http://nbviewer.ipython.org/github/pjbull/benchmarked/blob/master/Process.ipynb">nbviewer[td]</a></li>
                 
                 
-                    <li><a href="https://github.com/pjbull/the_supremes/" class="active">github</a></li>
+                    <li><a href="https://github.com/pjbull/benchmarked/" class="active">github</a></li>
                 
             </ul>
         </nav>
@@ -89,27 +89,23 @@
     <section id="main">
         <article class="container">
           <h1 class="hero">Is the Supreme Court Politically Biased?</h1>
-          <p>Each justice of the Supreme Court is appointed by a President of the United States. Even if this choice is supposed to be the most objective, one may think that the justice was choosen because of his ideological closenness to the President&#8217;s ideas. We try to see if this bias exists and has any impact on the Supreme Court decisions.</p>
+          <p>Each Justice of the Supreme Court is appointed by a President of the United States. Even if this choice is supposed to be objective, one may think that the justice was choosen because of his ideological closenness to the President. We try to see if this bias exists and has an impact on the Supreme Court decisions.</p>
 
 <h3 id='descriptive_analysis'>Descriptive Analysis</h3>
 
-<p>On each case raised to the Supreme Court, each justice takes a decision and the final decision is the choice of the Majority. A justice can choose between to directions:</p>
+<p>On each case raised to the Supreme Court, each Justice casts a vote and the final decision is the choice of the majority. These votes can be categorized ideologically as either <a href='http://scdb.wustl.edu/documentation.php?var=decisionDirection'>conservative or liberal</a>.</p>
 
-<ul>
-<li>Liberal</li>
-
-<li>Conservative</li>
-</ul>
-
-<p>Here is the barplot of the percentages of Liberal/Conservative decisions taken by justices appointed by Democrat/Republican Presidents:</p>
+<p>Here is the barplot of the percentages of liberal and conservative decisions taken by justices appointed by Democrat/Republican Presidents:</p>
 
 <p><img alt='alt text' src='img/pred1_bar_1.png' /></p>
 
-<p>This graph does not describe any particular trend. We can still observe as expected that Democrat-appointed Justices vote 59% of the time Liberal, while it is 52% for the Republican appointed ones. Each case in the Spaeth dataset is associated with an &#8216;Issue Area&#8217; that describes the general type of the case. If we draw the same graph as above for each of those areas:</p>
+<p>This graph suggests a small ideological correlation between the party of the the appointing President and the ideological direction of a Justice&#8217;s votes. We can observe as expected that Democrat-appointed Justices vote 59% of the time Liberal, while it is 52% for the Republican appointed ones.</p>
+
+<p>Each case in the Spaeth dataset is associated with an <a href='http://scdb.wustl.edu/documentation.php?var=issueArea'>Issue Area</a> that describes the area of the law that the case. If we draw the same graph as above for each of those areas:</p>
 
 <p><img alt='alt text' src='img/pred1_bar_2.png' /></p>
 
-<p>Each party is more sensible to its own case types:</p>
+<p>We can lear from the above graph that ideological tendencies are easier to identify in specific areas of law:</p>
 
 <ul>
 <li>First Amendment, Unions and Criminal Procedures for Democrat-appointed justices</li>
@@ -121,7 +117,7 @@
 
 <h3 id='discovering_groups_among_justices'>Discovering Groups among Justices</h3>
 
-<p>One of the most well-known technique to discover groups among unlbeled data is the K-means clustering algorithm. This algorithm finds group of points based on some features. The features we will be using for this clustering task are:</p>
+<p>We want to explore if there are other identifiable groupings of Justices in the court. We use k-means clustering and hierarchical clustering to determine these clusters. We are testing if Justices cluster with respect to these characteristics:</p>
 
 <ul>
 <li><strong>Liberal Ratio</strong>: Ratio of Liberal (Vs. Conservative) decisions for each justice,</li>
@@ -131,70 +127,13 @@
 <li><strong>Ratio of Dissent with Majority</strong>: The ratio of cases where the given justice disagreed with the majority vote.</li>
 </ul>
 
-<p>We perform the K-means algorithm on this unlabeled data with a number of clusters varying from 2 to 14. We use the Elbow method to find the &#8220;best&#8221; number of clusters: it is the threshold after which we don&#8217;t improve significantly the Within Sum of Squares (WSS) (our loss function here). Here is the graph of the WSS function of the number of clusters:</p>
-
-<p><img alt='alt text' src='img/pred1_elbow.png' /></p>
-
-<p>Our best number of clusters is 4 here. We could have thought that if the Supreme Court is ideologically oriented, then the optimal number of clusters would have been 2. Let&#8217;s see how Republican/Democrat-appointed are divided among the clusters:</p>
-
-<p><img alt='alt text' src='img/pred1_kmeans.png' /></p>
-
-<ul>
-<li><strong>Cluster 1</strong>: 90% of Republicans, 10% of Democrats</li>
-
-<li><strong>Cluster 2</strong>: 22% of Republicans, 56% of Democrats</li>
-
-<li><strong>Cluster 3</strong>: 31% of Republicans, 69% of Democrats</li>
-
-<li><strong>Cluster 4</strong>: 25% of Republicans, 50% of Democrats</li>
-</ul>
-
-<p><strong>NB</strong>: Some of the sums does not sum to 100%, because some of the Appointers (i.e. U.S. Presidents) have a different party than the two ones studied here on their Wikipedia page.</p>
-
-<p>The repartition of the justices in the clusters seems not to be the result of an ideological divergence. As you can see in the previous plot, we represented the points in a two-dimension space (while we have three different features). We performed a dimensionality reduction using Principal Component Analysis before Clustering the data. It would be interesting to see the importance of each feature in the two principal components:</p>
-<table><thead><tr><th>Features</th><th>PC1</th><th>PC2</th></tr></thead><tbody><tr><td style='text-align: left;'>Liberal Ratio</td><td style='text-align: left;'>0.999584</td><td style='text-align: left;'>0.023069</td>
-</tr><tr><td style='text-align: left;'>Dissent Ratio</td><td style='text-align: left;'>0.003893</td><td style='text-align: left;'>-0.702499</td>
-</tr><tr><td style='text-align: left;'>Opinion Writing Ratio</td><td style='text-align: left;'>0.028573</td><td style='text-align: left;'>-0.711310</td>
-</tr></tbody></table>
-<p>The first principal component is entirely explained by the Liberal Ratio which is the most discriminative feature we have here. This results seems logical. The Second Principal Component is equally explained by the Dissent Ration adn the Opinion Writing. Those figures help us understand the clusters plotted above:</p>
-
-<ul>
-<li><strong>Cluster 1 (top)</strong>: Average Liberal Ratio, Low Dissent Ratio, Low Opinion Writting</li>
-
-<li><strong>Cluster 2 (right)</strong>: High Liberal Ratio, Average Dissent Ratio, Average Opinion Writting</li>
-
-<li><strong>Cluster 3 (bottom)</strong>: Average Liberal Ratio, High Dissent Ratio, High Opinion Writting</li>
-
-<li><strong>Cluster 4 (left)</strong>: Low Liberal Ratio, Average Dissent Ratio, Average Opinion Writting</li>
-</ul>
-
-<p>Let&#8217;s try now to confirm those results using another Clustering technique, Hierarchical Clustering. This method has a major advantage on the previous one: It optimize by tself the number of clusters. It&#8217;s a great way to check our results in the previous method. We use the same unlabeled dataset. Let&#8217;s see what information we can gather from the dendrogram:</p>
-
 <p><img alt='alt text' src='img/pred1_hierarchical.png' /></p>
 
-<p>Hierarchical produced four different clusters here., with the following Republican/Democrat within percentages:</p>
+<p>From the above, we can see three large clusters. The red cluster is mostly modern liberal justices; the cyan cluster is mostly modern conservative justice; and the green cluster has mostly justices in less recent courts (before the Rehnquist court).</p>
 
-<ul>
-<li><strong>Cluster 1</strong>: 33% of Republicans, 44% of Democrats</li>
+<h3 id='summary'>Summary</h3>
 
-<li><strong>Cluster 2</strong>: 38% of Republicans, 62% of Democrats</li>
-
-<li><strong>Cluster 3</strong>: 44% of Republicans, 50% of Democrats</li>
-
-<li><strong>Cluster 4</strong>: 100% of Republicans, 0% of Democrats (only 2 justices)</li>
-</ul>
-
-<p>If we observe the average of the featuers in each of the clusters:</p>
-<table><thead><tr><th>Cluster</th><th>Dissent Ratio</th><th>Liberal Ratio</th><th>Opinion Ratio</th></tr></thead><tbody><tr><td style='text-align: left;'>Cluster 1</td><td style='text-align: left;'>0.188383</td><td style='text-align: left;'>0.301634</td><td style='text-align: left;'>0.191803</td>
-</tr><tr><td style='text-align: left;'>Cluster 2</td><td style='text-align: left;'>0.207880</td><td style='text-align: left;'>0.390014</td><td style='text-align: left;'>0.216675</td>
-</tr><tr><td style='text-align: left;'>Cluster 3</td><td style='text-align: left;'>0.234617</td><td style='text-align: left;'>0.684211</td><td style='text-align: left;'>0.249562</td>
-</tr><tr><td style='text-align: left;'>Cluster 4</td><td style='text-align: left;'>0.211852</td><td style='text-align: left;'>0.522745</td><td style='text-align: left;'>0.218390</td>
-</tr></tbody></table>
-<p>The liberal ratio are higher in average in clusters 3 and 4 than in clusters 1 and 2. Again it seems like it&#8217;s the most discriminative feature and it&#8217;s confirming the first part. the difference of the Dissent and Opinion Writting ratio averages in the clusters are not significative.</p>
-
-<h3 id='conclusion'>Conclusion</h3>
-
-<p>The K-means and Hierarchical clustering algorithms output both 4 different clusters, where Democrats and Republicans are not obviously divided (except for some low-numbered clusters). Ideology positions do not affect obviously the Supreme Court decisions.</p>
+<p>Using features of the data, we can see that justices group together based on other features than the party of the appointing President, even though this feature largely determines a number of our clusters.</p>
         </article>
     </section>
 
@@ -256,32 +195,32 @@
     imgList["kagan"] = new Array();
 
 //Set values for each mouse state
-  imgList["roberts"]["out"] = "img/prof/JGRoberts.png";
+  imgList["roberts"]["out"] = "img/prof/justice.jpg";
   imgList["roberts"]["over"] = "img/prof/JGRoberts.png";
 
-  imgList["scalia"]["out"] = "img/prof/JGRoberts.png";
+  imgList["scalia"]["out"] = "img/prof/justice.jpg";
   imgList["scalia"]["over"] = "img/prof/AScalia.png";
 
-  imgList["kennedy"]["out"] = "img/prof/JGRoberts.png";
+  imgList["kennedy"]["out"] = "img/prof/justice.jpg";
   imgList["kennedy"]["over"] = "img/prof/AKennedy.png";
 
-  imgList["thomas"]["out"] = "img/prof/JGRoberts.png";
+  imgList["thomas"]["out"] = "img/prof/justice.jpg";
   imgList["thomas"]["over"] = "img/prof/CThomas.png";
 
-  imgList["ginsburg"]["out"] = "img/prof/JGRoberts.png";
+  imgList["ginsburg"]["out"] = "img/prof/justice.jpg";
   imgList["ginsburg"]["over"] = "img/prof/RGinsburg.png";
 
-  imgList["breyer"]["out"] = "img/prof/JGRoberts.png";
+  imgList["breyer"]["out"] = "img/prof/justice.jpg";
   imgList["breyer"]["over"] = "img/prof/SBreyer.png";
 
 
-  imgList["alito"]["out"] = "img/prof/JGRoberts.png";
+  imgList["alito"]["out"] = "img/prof/justice.jpg";
   imgList["alito"]["over"] = "img/prof/SAlito.png";
 
-  imgList["sotomayor"]["out"] = "img/prof/JGRoberts.png";
+  imgList["sotomayor"]["out"] = "img/prof/justice.jpg";
   imgList["sotomayor"]["over"] = "img/prof/SSotomayor.png";
 
-  imgList["kagan"]["out"] = "img/prof/JGRoberts.png";
+  imgList["kagan"]["out"] = "img/prof/justice.jpg";
   imgList["kagan"]["over"] = "img/prof/EKagan.png";
 
 
