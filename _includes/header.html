@@ -10,19 +10,45 @@
         <nav class="main">
             <ul>
                 {% if page.nav == "one" %}
-                    <li><a href="{{site.baseurl}}" class="active">Intro</a></li>
+                    <li><a href="{{site.baseurl}}" class="active">Overview</a></li>
                 {% else %}
-                    <li><a href="{{site.baseurl}}">Intro</a></li>
+                    <li><a href="{{site.baseurl}}">Overview</a></li>
                 {% endif %}
+                
                 {% if page.nav == "two" %}
-                <li><a href="{{site.baseurl}}analysis.html" class="active">Seeing the Data</a></li>
+                <li><a href="{{site.baseurl}}data.html" class="active">The Data</a></li>
                 {% else %}
-                <li><a href="{{site.baseurl}}analysis.html">Seeing the Data</a></li>
+                <li><a href="{{site.baseurl}}data.html">The Data</a></li>
                 {% endif %}
+                
                 {% if page.nav == "three" %}
-                <li><a href="{{site.baseurl}}preds.html" class="active">Predictions</a></li>
+                <li><a href="{{site.baseurl}}explore.html" class="active">Exploration</a></li>
                 {% else %}
-                <li><a href="{{site.baseurl}}preds.html">Predictions</a></li>
+                <li><a href="{{site.baseurl}}explore.html">Exploration</a></li>
+                {% endif %}
+
+                {% if page.nav == "three" %}
+                <li><a href="{{site.baseurl}}bias.html" class="active">Bias</a></li>
+                {% else %}
+                <li><a href="{{site.baseurl}}bias.html">Bias</a></li>
+                {% endif %}
+
+                {% if page.nav == "four" %}
+                <li><a href="{{site.baseurl}}preds.html" class="active">Justice Model</a></li>
+                {% else %}
+                <li><a href="{{site.baseurl}}preds.html">Justice Model</a></li>
+                {% endif %}
+
+                {% if page.nav == "five" %}
+                <li><a href="{{site.baseurl}}preds2.html" class="active">Citation Model</a></li>
+                {% else %}
+                <li><a href="{{site.baseurl}}preds2.html">Citation Model</a></li>
+                {% endif %}
+
+                {% if page.nav == "six" %}
+                <li><a href="{{site.baseurl}}conclusions.html" class="active">Conclusions</a></li>
+                {% else %}
+                <li><a href="{{site.baseurl}}conclusions.html">Conclusions</a></li>
                 {% endif %}
             </ul>
         </nav>

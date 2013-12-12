@@ -1,0 +1,374 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Seeing the Data | Benchmarked</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+<!--   <link rel="shortcut icon" href="http://gravatar.com/avatar/9f5734a7063a4c48139f4999f3100167
+?s=16"> -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/desktop.css" media="(min-width:40em)">
+  <link rel="stylesheet" href="css/pygments.css">
+  <link rel="stylesheet" href="css/font.css">
+  <script type="text/javascript" charset="utf-8" src="js/matchmedia.js"></script>
+  <script type="text/javascript" charset="utf-8" src="js/picturefill.js"></script>
+  <script type="text/javascript" charset="utf-8" src="js/sigma.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/sigma.parseGexf.js"></script>
+</head>
+
+<body>
+<div class="wrapper">
+    <header>
+    <div class="container">
+        <div class="profile">
+            analyzing
+            the US supreme
+            court
+            <!-- KEEP FOR CSS SPACING -->
+        </div>
+        <h5 class="logo"><a href="">benchmarked</a></h5>
+        <nav class="main">
+            <ul>
+                
+                    <li><a href="">Overview</a></li>
+                
+                
+                
+                <li><a href="data.html" class="active">The Data</a></li>
+                
+                
+                
+                <li><a href="explore.html">Exploration</a></li>
+                
+
+                
+                <li><a href="bias.html">Bias</a></li>
+                
+
+                
+                <li><a href="preds.html">Justice Model</a></li>
+                
+
+                
+                <li><a href="preds2.html">Citation Model</a></li>
+                
+
+                
+                <li><a href="conclusions.html">Conclusions</a></li>
+                
+            </ul>
+        </nav>
+        <div class="nav-slider">
+            <div class="nav-selection two"></div>
+        </div>
+        <div class="subnav-slider">
+            <div class="subnav-selection one"></div>
+        </div>
+        <nav class="subnav">
+            <ul>
+                
+                    <li><a href="about.html" class="active">about us</a></li>
+                
+                
+                    <li><a href="/to-nb-viewer">nbviewer[td]</a></li>
+                
+                
+                    <li><a href="https://github.com/pjbull/the_supremes/">github</a></li>
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+    <section id="main">
+        <article class="container">
+          <h1 class="hero">Seeing the Data</h1>
+          <p>The first step in attempting to identify bias in the Supreme Court is to describe what we actually mean by &#8216;bias&#8217;. In the context of the Supreme Court, bias is meant as a preferential treatment in how a particular case is handled by the Court. When exploring how a case is chosen to be reviewed and ultimately decided upon by the Court, the major forms of possible bias are a selection bias and judicial impartiality.</p>
+
+<h1 id='exploring_selection_bias'>Exploring Selection Bias</h1>
+
+<p>Where do the Supreme Court cases come from? The legal system of the United States is structured in a hierarchal fashion of District Courts: Appeals Courts: The Supreme Court. District Courts issue decisions on a state/local level. These decisions can be further reviewed by one of thirteen regional Federal Appeals Courts. If warranted, the final decision is render by the Supreme Court which is why the Court is also known as the &#8216;Court of Last Resort&#8217;. Because there are numerous pathways that lead to the Supreme Court, we simplify the analysis to the origin, where the case first starts, and source, the judicial body that last reviews a case before being taken up by the Supreme Court.</p>
+
+<p>Do cases originate primarily in certain geographical regions or states? <a href='img/CholorplethOrigin.png' title='State Origins'>alt text</a></p>
+
+<p>California and New York stand out for their normalized percentage of the cases that reach the Supreme Court. This origin bias likely due to the concurrence of high state population and political sensibilities that are amendable to legal advocacy.</p>
+
+<p>Are certain courts more likely to be the source of Supreme Court cases? <a href='img/Source_bar.png' title='Case Source'>alt text</a></p>
+
+<p>From the proceeding graph, it can be seen that the most likely source for a Supreme Court case is from a State-level Supreme Court. It should not be surprising that a case important enough to make it to a State&#8217;s Supreme Court would likely be significant enough to warrant a review by the Supreme Court. Additionally, note that remaining courts are all Federal Appeals courts. This also reinforces the notion of a chain of command within the judicial system. Finally, the most likely appeal court in the Ninth Circuit which covers the western state including California, which correlates well to the previous state origins map.</p>
+
+<h1 id='exploring_judicial_impartiality'>Exploring Judicial Impartiality</h1>
+
+<p>Supreme Court Justices are appointed to the court for life. Ostensibly, immunity from re-election concerns should insure impartibility in judicial proceeding. Additionally, the Justices are suppose to be apolitical with review of court cases based solely on Constitutional legality. However, the Justices are still appointed by a non-apolitical entity, namely the President of the United States. It is logical to assume, that the President appoints Justices who aline with their political philosophies. But do the outcomes of the Supreme Court review truly reflect a political bias of the Justices? More precisely, do certain Justices tend to vote conservative or liberal on a particular legal issue.</p>
+
+<p>The cases that reach the Supreme Court are broadly grouped into fourteen categories pertaining to the following issues:</p>
+
+<ul>
+<li>Criminal Procedure</li>
+
+<li>Civil Rights</li>
+
+<li>First Amendment</li>
+
+<li>Due Process</li>
+
+<li>Privacy</li>
+
+<li>Attorneys</li>
+
+<li>Unions</li>
+
+<li>Economic Activity</li>
+
+<li>Judicial Power</li>
+
+<li>Federalism</li>
+
+<li>Interstate Relations</li>
+
+<li>Federal Taxation</li>
+
+<li>Private Action</li>
+
+<li>Miscellaneous</li>
+</ul>
+
+<p>In the context of issues pertaining to criminal procedure, civil rights, First Amendment, due process, privacy, and attorneys, liberal is</p>
+
+<ul>
+<li>pro-person accused or convicted of crime, or denied a jury trial</li>
+
+<li>pro-civil liberties or civil rights claimant, especially those exercising less protected civil rights (e.g., homosexuality)</li>
+
+<li>pro-child or juvenile</li>
+
+<li>pro-indigent</li>
+
+<li>pro-Indian</li>
+
+<li>pro-affirmative action</li>
+
+<li>pro-neutrality in establishment clause cases</li>
+
+<li>pro-female in abortion</li>
+
+<li>pro-underdog</li>
+
+<li>anti-slavery</li>
+
+<li>incorporation of foreign territories</li>
+
+<li>anti-government in the context of due process, except for takings clause cases where a pro-government, anti-owner vote is considered liberal except in criminal forfeiture cases or those where the taking is pro-business violation of due process by exercising jurisdiction over nonresidents</li>
+
+<li>pro-attorney</li>
+
+<li>pro-accountability and/or anti-corruption in campaign spending</li>
+
+<li>pro-privacy vis-a-vis the 1st Amendment where the privacy invaded is that of mental incompetents</li>
+
+<li>pro-disclosure in Freedom of Information Act issues except for employment and student records</li>
+</ul>
+
+<p>In the context of issues pertaining to unions and economic activity, liberal is</p>
+
+<ul>
+<li>pro-union except in union antitrust where liberal = pro-competition</li>
+
+<li>anti-business</li>
+
+<li>anti-employer</li>
+
+<li>pro-competition</li>
+
+<li>pro-liability</li>
+
+<li>pro-injured person</li>
+
+<li>pro-indigent</li>
+
+<li>pro-small business vis-a-vis large business</li>
+
+<li>pro-state/anti-business in state tax cases</li>
+
+<li>pro-debtor</li>
+
+<li>pro-bankrupt</li>
+
+<li>pro-Indian</li>
+
+<li>pro-environmental protection</li>
+
+<li>pro-economic underdog</li>
+
+<li>pro-consumer</li>
+
+<li>pro-accountability in governmental corruption</li>
+
+<li>pro-original grantee, purchaser, or occupant in state and territorial land claims</li>
+
+<li>anti-union member or employee vis-a-vis union</li>
+
+<li>anti-union in union antitrust</li>
+
+<li>anti-union in union or closed shop</li>
+
+<li>pro-trial in arbitration</li>
+</ul>
+
+<p>In the context of issues pertaining to judicial power, liberal is</p>
+
+<ul>
+<li>pro-exercise of judicial power</li>
+
+<li>pro-judicial &#8220;activism&#8221;</li>
+
+<li>pro-judicial review of administrative action</li>
+</ul>
+
+<p>In the context of issues pertaining to federalism, liberal is</p>
+
+<ul>
+<li>pro-federal power</li>
+
+<li>pro-executive power in executive/congressional disputes</li>
+
+<li>anti-state</li>
+
+<li>In the context of issues pertaining to federal taxation, liberal is</li>
+
+<li>pro-United States taxation</li>
+</ul>
+
+<p>Conservative is the opposite of liberal for the above categories</p>
+
+<p><a href='img/Justice_Profiles.png' title='Justice Profiles'>alt text</a></p>
+
+<p>Viewing the profiles above, one can see that each Justice has a unique voting pattern. However, interestingly, most profiles have ideological voting percentages within the range of 40-60%, regardless of law issue. Because Justices tend not to vote heavily towards one ideological direction, this result suggests that Justices do not vote on idealogical basis but rather consider each case on its own Constitutional legality.</p>
+        </article>
+    </section>
+
+    <footer>
+    <nav class="container">
+        <ul>
+            <li>&copy; Peter Bull, 2013</li>
+        </ul>
+    </nav>
+</footer>
+
+</body>
+<script type="text/javascript" charset="utf-8">
+    document.onreadystatechange = function() {
+        if ( document.readyState == 'complete' ) {
+            var active = document.querySelector( 'header nav.main a.active' ).innerHTML.toLowerCase(),
+                links = document.querySelectorAll( 'header nav.main li a'),
+                selection = document.querySelector( 'header .nav-selection' ),
+                subactive = document.querySelector( 'header nav.subnav a.active' ).innerHTML.toLowerCase(),
+                sublinks = document.querySelectorAll( 'header nav.subnav li a'),
+                subselection = document.querySelector( 'header .subnav-selection' ),
+                i, j, link;
+            for ( i = 0; i < links.length; i++ ) {
+                link = links[ i ];
+                link.addEventListener( 'mouseover', function() {
+                    selection.className = 'nav-selection';
+                    selection.className = 'nav-selection ' + this.innerHTML.toLowerCase();
+                });
+                link.addEventListener( 'mouseout', function() {
+                    selection.className = 'nav-selection ' + active;
+                });
+            }
+            for ( i = 0; i < sublinks.length; i++ ) {
+                link = sublinks[ i ];
+                link.addEventListener( 'mouseover', function() {
+                    subselection.className = 'subnav-selection';
+                    subselection.className = 'subnav-selection ' + this.innerHTML.toLowerCase();
+                });
+                link.addEventListener( 'mouseout', function() {
+                    subselection.className = 'subnav-selection ' + subactive;
+                });
+            }
+        }
+    };
+</script>
+
+<script type="text/javascript">
+    function init() {
+    // Instanciate sigma.js and customize rendering :
+    var sigInst = sigma.init(document.getElementById('sigma-example')).drawingProperties({
+    defaultLabelColor: '#fff',
+    defaultLabelSize: 12,
+    defaultLabelBGColor: '#fff',
+    defaultLabelHoverColor: '#000',
+    labelThreshold: 7,
+    defaultEdgeType: 'curve'
+    }).graphProperties({
+    minNodeSize: 0.5,
+    maxNodeSize: 13,
+    minEdgeSize: 1,
+    maxEdgeSize: 1,
+    sideMargin: 50
+    }).mouseProperties({
+    maxRatio: 32
+    });
+     
+    // Bind events :
+    var greyColor = '#666';
+    sigInst.bind('overnodes',function(event){
+    var nodes = event.content;
+    var neighbors = {};
+    sigInst.iterEdges(function(e){
+    if(nodes.indexOf(e.source)<0 && nodes.indexOf(e.target)<0){
+    if(!e.attr['grey']){
+    e.attr['true_color'] = e.color;
+    e.color = greyColor;
+    e.attr['grey'] = 1;
+    }
+    }else{
+    e.color = e.attr['grey'] ? e.attr['true_color'] : e.color;
+    e.attr['grey'] = 0;
+     
+    neighbors[e.source] = 1;
+    neighbors[e.target] = 1;
+    }
+    }).iterNodes(function(n){
+    if(!neighbors[n.id]){
+    if(!n.attr['grey']){
+    n.attr['true_color'] = n.color;
+    n.color = greyColor;
+    n.attr['grey'] = 1;
+    }
+    }else{
+    n.color = n.attr['grey'] ? n.attr['true_color'] : n.color;
+    n.attr['grey'] = 0;
+    }
+    }).draw(2,2,2);
+    }).bind('outnodes',function(){
+    sigInst.iterEdges(function(e){
+    e.color = e.attr['grey'] ? e.attr['true_color'] : e.color;
+    e.attr['grey'] = 0;
+    }).iterNodes(function(n){
+    n.color = n.attr['grey'] ? n.attr['true_color'] : n.color;
+    n.attr['grey'] = 0;
+    }).draw(2,2,2);
+    });
+ 
+    // Parse a GEXF encoded file to fill the graph
+    // (requires "sigma.parseGexf.js" to be included)
+    sigInst.parseGexf('/data/cite_graph.gexf');
+     
+    // Draw the graph :
+    sigInst.draw();
+    }
+     
+    if (document.addEventListener) {
+    document.addEventListener("DOMContentLoaded", init, false);
+    } else {
+    window.onload = init;
+    }
+</script>
+
+</html>

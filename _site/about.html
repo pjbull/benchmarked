@@ -16,6 +16,8 @@
   <link rel="stylesheet" href="css/font.css">
   <script type="text/javascript" charset="utf-8" src="js/matchmedia.js"></script>
   <script type="text/javascript" charset="utf-8" src="js/picturefill.js"></script>
+  <script type="text/javascript" charset="utf-8" src="js/sigma.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/sigma.parseGexf.js"></script>
 </head>
 
 <body>
@@ -32,13 +34,31 @@
         <nav class="main">
             <ul>
                 
-                    <li><a href="" class="active">Intro</a></li>
+                    <li><a href="" class="active">Overview</a></li>
                 
                 
-                <li><a href="analysis.html">Seeing the Data</a></li>
+                
+                <li><a href="data.html">The Data</a></li>
                 
                 
-                <li><a href="preds.html">Predictions</a></li>
+                
+                <li><a href="explore.html">Exploration</a></li>
+                
+
+                
+                <li><a href="bias.html">Bias</a></li>
+                
+
+                
+                <li><a href="preds.html">Justice Model</a></li>
+                
+
+                
+                <li><a href="preds2.html">Citation Model</a></li>
+                
+
+                
+                <li><a href="conclusions.html">Conclusions</a></li>
                 
             </ul>
         </nav>
@@ -72,13 +92,13 @@
 
 <h2 id='peter_bull'>Peter Bull</h2>
 
-<p>Sharp-looking hombre</p>
+<p>Vegetarian Dude</p>
 
 <p><img alt='alt text' src='img/pb.jpg' /></p>
 
 <h2 id='aymen_jaffry'>Aymen Jaffry</h2>
 
-<p>Aymen is dangerous, as you can see</p>
+<p>Bonjour !</p>
 
 <p><img alt='alt text' src='img/aj.jpg' /></p>
 
@@ -133,6 +153,82 @@
             }
         }
     };
+</script>
+
+<script type="text/javascript">
+    function init() {
+    // Instanciate sigma.js and customize rendering :
+    var sigInst = sigma.init(document.getElementById('sigma-example')).drawingProperties({
+    defaultLabelColor: '#fff',
+    defaultLabelSize: 12,
+    defaultLabelBGColor: '#fff',
+    defaultLabelHoverColor: '#000',
+    labelThreshold: 7,
+    defaultEdgeType: 'curve'
+    }).graphProperties({
+    minNodeSize: 0.5,
+    maxNodeSize: 13,
+    minEdgeSize: 1,
+    maxEdgeSize: 1,
+    sideMargin: 50
+    }).mouseProperties({
+    maxRatio: 32
+    });
+     
+    // Bind events :
+    var greyColor = '#666';
+    sigInst.bind('overnodes',function(event){
+    var nodes = event.content;
+    var neighbors = {};
+    sigInst.iterEdges(function(e){
+    if(nodes.indexOf(e.source)<0 && nodes.indexOf(e.target)<0){
+    if(!e.attr['grey']){
+    e.attr['true_color'] = e.color;
+    e.color = greyColor;
+    e.attr['grey'] = 1;
+    }
+    }else{
+    e.color = e.attr['grey'] ? e.attr['true_color'] : e.color;
+    e.attr['grey'] = 0;
+     
+    neighbors[e.source] = 1;
+    neighbors[e.target] = 1;
+    }
+    }).iterNodes(function(n){
+    if(!neighbors[n.id]){
+    if(!n.attr['grey']){
+    n.attr['true_color'] = n.color;
+    n.color = greyColor;
+    n.attr['grey'] = 1;
+    }
+    }else{
+    n.color = n.attr['grey'] ? n.attr['true_color'] : n.color;
+    n.attr['grey'] = 0;
+    }
+    }).draw(2,2,2);
+    }).bind('outnodes',function(){
+    sigInst.iterEdges(function(e){
+    e.color = e.attr['grey'] ? e.attr['true_color'] : e.color;
+    e.attr['grey'] = 0;
+    }).iterNodes(function(n){
+    n.color = n.attr['grey'] ? n.attr['true_color'] : n.color;
+    n.attr['grey'] = 0;
+    }).draw(2,2,2);
+    });
+ 
+    // Parse a GEXF encoded file to fill the graph
+    // (requires "sigma.parseGexf.js" to be included)
+    sigInst.parseGexf('/data/cite_graph.gexf');
+     
+    // Draw the graph :
+    sigInst.draw();
+    }
+     
+    if (document.addEventListener) {
+    document.addEventListener("DOMContentLoaded", init, false);
+    } else {
+    window.onload = init;
+    }
 </script>
 
 </html>

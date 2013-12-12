@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>Exemplar | Benchmarked</title>
+  <title>Making Predictions | Benchmarked</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
 <!--   <link rel="shortcut icon" href="http://gravatar.com/avatar/9f5734a7063a4c48139f4999f3100167
@@ -42,11 +42,11 @@
                 
                 
                 
-                <li><a href="explore.html">Exploration</a></li>
+                <li><a href="explore.html" class="active">Exploration</a></li>
                 
 
                 
-                <li><a href="bias.html">Bias</a></li>
+                <li><a href="bias.html" class="active">Bias</a></li>
                 
 
                 
@@ -63,10 +63,10 @@
             </ul>
         </nav>
         <div class="nav-slider">
-            <div class="nav-selection projects"></div>
+            <div class="nav-selection three"></div>
         </div>
         <div class="subnav-slider">
-            <div class="subnav-selection home"></div>
+            <div class="subnav-selection three"></div>
         </div>
         <nav class="subnav">
             <ul>
@@ -77,7 +77,7 @@
                     <li><a href="/to-nb-viewer">nbviewer[td]</a></li>
                 
                 
-                    <li><a href="https://github.com/pjbull/the_supremes/">github</a></li>
+                    <li><a href="https://github.com/pjbull/the_supremes/" class="active">github</a></li>
                 
             </ul>
         </nav>
@@ -87,98 +87,28 @@
 
     <section id="main">
         <article class="container">
-          <h1 class="hero">Exemplar</h1>
-          <p>
-  This is an example of the default theme I use for my jekyll sites. This
-  theme is used for my <a href="http://tybenz.com">blog</a> and my project sites.
-</p>
+          <h1 class="hero">Making Predictions</h1>
+          <h2 id='using_the_citations_of_supreme_court_cases_in_the_briefs_submitted_by_each_side'>Using the Citations of Supreme Court Cases in the Briefs Submitted by Each Side</h2>
 
-<p>
-  This site uses a combination of the following:
-</p>
+<p>One of the pillars of the legal system in the United States is precedent&#8211;that is, if the court has already decided an issue, it will apply the same reasoning if that issue or an analogous one arises again. Written documents that are part of legal proceedings, such as opinions and briefs, cite explicitly any previous cases that support their argument or touch on the issues at hand. We wonder if understanding how often and when a case is cited could in turn be used to predict the outcome of future cases. To do this, we create a network of citations for the opinions of the Supreme Court. The opinion is written by the court when it makes a decision and cites that cases that raised issues it felt were worth addressing or had some precedential value. Briefs are submitted by both parties (petitioner and respondent) as part of their arguments to the court. These briefs also cite heavily previous court cases that they believe affect the issue at hand.</p>
 
-<ol>
-  <li><a href="http://jekyllrb.com/">Jekyll</a>: Static site generator</li>
-  <li><a href="http://sass-lang.com">Sass</a>: CSS preprocessor</li>
-  <li><a href="http://bourbon.io">Bourbon</a>: Set of generic Sass mixins</li>
-  <li><a href="http://neat.bourbon.io">Neat</a>: Set of grid-based Sass mixins (dependent on Bourbon)</li>
-  <li>Fonts: <a href="http://www.fontsquirrel.com/fonts/bebas-neue">Bebas Neue</a>, <a href="https://github.com/adobe/source-sans-pro">Adobe Source Sans Pro</a>, <a href="https://github.com/adobe/source-code-pro">Adobe Source Code Pro</a></li>
-</ol>
+<p>We wonder if we can model legal precedent using network statistics and thus be able to predict a new case based on the precedent of the cases cited by the briefs from both sides.</p>
 
-<br />
+<p>To do so we must:</p>
 
-<article class="post no-border">
-    <div class="post-header">
-        <p class="date">Feb 21, 2012</p>
-        <h1>Posts</h1>
-    </div>
-    <div class="post-body">
-      <p>
-        This is what a post looks like. Straight forward. Date goes above the header. Content goes below the header.
-      </p>
-      <p>Etiam porta sem malesuada magna mollis euismod. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-    </div>
-</article>
+<ul>
+<li>Create a network representation of the citations</li>
 
-<h1>Boxes</h1>
-<div id="projects">
-  
-    
-  
-    
-  
-    
-      
-        <a class="project" href="/boxes/this-is-a-box-1">
-      
-          <div class="project-header">
-              <h2>
-                  This is a box
-              </h2>
-          </div>
-          <div class="project-body">
-            <p>
-                Boxes make up a small 2 column grid on larger screens and shrink to single column on smaller screens
-            </p>
-          </div>
-        </a>
-    
-  
-    
-      
-        <a class="project" href="/boxes/this-is-a-box-2">
-      
-          <div class="project-header">
-              <h2>
-                  This is a box
-              </h2>
-          </div>
-          <div class="project-body">
-            <p>
-                Boxes make up a small 2 column grid on larger screens and shrink to single column on smaller screens
-            </p>
-          </div>
-        </a>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
+<li>Calculate network statistics, such as page rank, to try to approximate &#8220;precedent&#8221;</li>
+
+<li>Verify there is a relationship between this precedent and case outcome</li>
+</ul>
+
+<p>Below is an interactive representation of the citation network of Supreme Court cases. You can zoom in and out by scrolling in this window, and see which cases cite an influential case by hovering over that case. The cases are color-coded by the area of law:</p>
+<table><thead><tr><th><strong>Blue</strong></th><th>First Amendment</th><th><strong>Green</strong></th><th>Criminal Procedure</th><th><strong>Red</strong></th><th>Civil Rights</th></tr></thead><tbody><tr><td style='text-align: left;'><strong>Purple</strong></td><td style='text-align: left;'>Economic Activity</td><td style='text-align: left;'><strong>Green</strong></td><td style='text-align: left;'>Criminal Procedure</td><td style='text-align: left;'><strong>Red</strong></td><td style='text-align: left;'>Civil Rights</td>
+</tr></tbody></table><div class='sigma-parent' id='sigma-example-parent'>
+	<div class='sigma-expand' id='sigma-example' />
 </div>
-
         </article>
     </section>
 
