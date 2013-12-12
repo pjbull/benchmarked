@@ -1,0 +1,321 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Making Predictions | Benchmarked</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+<!--   <link rel="shortcut icon" href="http://gravatar.com/avatar/9f5734a7063a4c48139f4999f3100167
+?s=16"> -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/desktop.css" media="(min-width:40em)">
+  <link rel="stylesheet" href="css/pygments.css">
+  <link rel="stylesheet" href="css/font.css">
+  <script type="text/javascript" charset="utf-8" src="js/matchmedia.js"></script>
+  <script type="text/javascript" charset="utf-8" src="js/picturefill.js"></script>
+  <script type="text/javascript" charset="utf-8" src="js/sigma.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/sigma.parseGexf.js"></script>
+</head>
+
+<body>
+<div class="wrapper">
+    <header>
+    <div class="container">
+        <div class="profile">
+            analyzing
+            the US supreme
+            court
+            <!-- KEEP FOR CSS SPACING -->
+        </div>
+        <h5 class="logo"><a href="">benchmarked</a></h5>
+        <nav class="main">
+            <ul>
+                
+                    <li><a href="">Overview</a></li>
+                
+                
+                
+                <li><a href="data.html">The Data</a></li>
+                
+                
+                
+                <li><a href="explore.html" class="active">Exploration</a></li>
+                
+
+                
+                <li><a href="bias.html" class="active">Bias</a></li>
+                
+
+                
+                <li><a href="preds.html">Justice Model</a></li>
+                
+
+                
+                <li><a href="preds2.html">Citation Model</a></li>
+                
+
+                
+                <li><a href="conclusions.html">Conclusions</a></li>
+                
+            </ul>
+        </nav>
+        <div class="nav-slider">
+            <div class="nav-selection three"></div>
+        </div>
+        <div class="subnav-slider">
+            <div class="subnav-selection three"></div>
+        </div>
+        <nav class="subnav">
+            <ul>
+                
+                    <li><a href="about.html">about us</a></li>
+                
+                
+                    <li><a href="/to-nb-viewer">nbviewer[td]</a></li>
+                
+                
+                    <li><a href="https://github.com/pjbull/the_supremes/" class="active">github</a></li>
+                
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+    <section id="main">
+        <article class="container">
+          <h1 class="hero">Making Predictions</h1>
+          <h2 id='is_the_supreme_court_ideologically_biased'>Is the Supreme Court Ideologically Biased?</h2>
+
+<p>Each justice of the Supreme Court is appointed by a President of the United States. Even if this choice is supposed to be the most objective, one may think that the justice was choosen because of his ideological closenness to the President&#8217;s ideas. We try to see if this bias exists and has any impact on the Supreme Court decisions.</p>
+
+<h3 id='descriptive_analysis'>Descriptive Analysis</h3>
+
+<p>On each case raised to the Supreme Court, each justice takes a decision and the final decision is the choice of the Majority. A justice can choose between to directions:</p>
+
+<ul>
+<li>Liberal</li>
+
+<li>Conservative</li>
+</ul>
+
+<p>Here is the barplot of the percentages of Liberal/Conservative decisions taken by justices appointed by Democrat/Republican Presidents:</p>
+
+<p><img alt='alt text' src='img/pred1_bar_1.png' /></p>
+
+<p>This graph does not describe any particular trend. We can still observe as expected that Democrat-appointed Justices vote 59% of the time Liberal, while it is 52% for the Republican appointed ones. Each case in the Spaeth dataset is associated with an &#8216;Issue Area&#8217; that describes the general type of the case. If we draw the same graph as above for each of those areas:</p>
+
+<p><img alt='alt text' src='img/pred1_bar_2.png' /></p>
+
+<p>Each party is more sensible to its own case types:</p>
+
+<ul>
+<li>First Amendment, Unions and Criminal Procedures for Democrat-appointed justices</li>
+
+<li>Unions, Judicial Power and Attorneys for Republican-appointed justices</li>
+</ul>
+
+<p>Our next step is to find groups among justices and see if those groups separate justices that were appointed by Presidents from different parties.</p>
+
+<h3 id='discovering_groups_among_justices'>Discovering Groups among Justices</h3>
+
+<p>One of the most well-known technique to discover groups among unlbeled data is the K-means clustering algorithm. This algorithm finds group of points based on some features. The features we will be using for this clustering task are:</p>
+
+<ul>
+<li><strong>Liberal Ratio</strong>: Ratio of Liberal (Vs. Conservative) decisions for each justice,</li>
+
+<li><strong>Opinion Written Ratio</strong>: The ratio of cases where the given justice wrote an opinion. Each justice can or callot write an opinion after a case is voted,</li>
+
+<li><strong>Ratio of Dissent with Majority</strong>: The ratio of cases where the given justice disagreed with the majority vote.</li>
+</ul>
+
+<p>We perform the K-means algorithm on this unlabeled data with a number of clusters varying from 2 to 14. We use the Elbow method to find the &#8220;best&#8221; number of clusters: it is the threshold after which we don&#8217;t improve significantly the Within Sum of Squares (WSS) (our loss function here). Here is the graph of the WSS function of the number of clusters:</p>
+
+<p><img alt='alt text' src='img/pred1_elbow.png' /></p>
+
+<p>Our best number of clusters is 4 here. We could have thought that if the Supreme Court is ideologically oriented, then the optimal number of clusters would have been 2. Let&#8217;s see how Republican/Democrat-appointed are divided among the clusters:</p>
+
+<p><img alt='alt text' src='img/pred1_kmeans.png' /></p>
+
+<ul>
+<li><strong>Cluster 1</strong>: 90% of Republicans, 10% of Democrats</li>
+
+<li><strong>Cluster 2</strong>: 22% of Republicans, 56% of Democrats</li>
+
+<li><strong>Cluster 3</strong>: 31% of Republicans, 69% of Democrats</li>
+
+<li><strong>Cluster 4</strong>: 25% of Republicans, 50% of Democrats</li>
+</ul>
+
+<p><strong>NB</strong>: Some of the sums does not sum to 100%, because some of the Appointers (i.e. U.S. Presidents) have a different party than the two ones studied here on their Wikipedia page.</p>
+
+<p>The repartition of the justices in the clusters seems not to be the result of an ideological divergence. As you can see in the previous plot, we represented the points in a two-dimension space (while we have three different features). We performed a dimensionality reduction using Principal Component Analysis before Clustering the data. It would be interesting to see the importance of each feature in the two principal components:</p>
+<table><thead><tr><th>Features</th><th>PC1</th><th>PC2</th></tr></thead><tbody><tr><td style='text-align: left;'>Liberal Ratio</td><td style='text-align: left;'>0.999584</td><td style='text-align: left;'>0.023069</td>
+</tr><tr><td style='text-align: left;'>Dissent Ratio</td><td style='text-align: left;'>0.003893</td><td style='text-align: left;'>-0.702499</td>
+</tr><tr><td style='text-align: left;'>Opinion Writing Ratio</td><td style='text-align: left;'>0.028573</td><td style='text-align: left;'>-0.711310</td>
+</tr></tbody></table>
+<p>The first principal component is entirely explained by the Liberal Ratio which is the most discriminative feature we have here. This results seems logical. The Second Principal Component is equally explained by the Dissent Ration adn the Opinion Writing. Those figures help us understand the clusters plotted above:</p>
+
+<ul>
+<li><strong>Cluster 1 (top)</strong>: Average Liberal Ratio, Low Dissent Ratio, Low Opinion Writting</li>
+
+<li><strong>Cluster 2 (right)</strong>: High Liberal Ratio, Average Dissent Ratio, Average Opinion Writting</li>
+
+<li><strong>Cluster 3 (bottom)</strong>: Average Liberal Ratio, High Dissent Ratio, High Opinion Writting</li>
+
+<li><strong>Cluster 4 (left)</strong>: Low Liberal Ratio, Average Dissent Ratio, Average Opinion Writting</li>
+</ul>
+
+<p>Let&#8217;s try now to confirm those results using another Clustering technique, Hierarchical Clustering. This method has a major advantage on the previous one: It optimize by tself the number of clusters. It&#8217;s a great way to check our results in the previous method. We use the same unlabeled dataset. Let&#8217;s see what information we can gather from the dendrogram:</p>
+
+<p><img alt='alt text' src='img/pred1_hierarchical.png' /></p>
+
+<p>Hierarchical produced four different clusters here., with the following Republican/Democrat within percentages:</p>
+
+<ul>
+<li><strong>Cluster 1</strong>: 33% of Republicans, 44% of Democrats</li>
+
+<li><strong>Cluster 2</strong>: 38% of Republicans, 62% of Democrats</li>
+
+<li><strong>Cluster 3</strong>: 44% of Republicans, 50% of Democrats</li>
+
+<li><strong>Cluster 4</strong>: 100% of Republicans, 0% of Democrats (only 2 justices)</li>
+</ul>
+
+<p>If we observe the average of the featuers in each of the clusters:</p>
+<table><thead><tr><th>Cluster</th><th>Dissent Ratio</th><th>Liberal Ratio</th><th>Opinion Ratio</th></tr></thead><tbody><tr><td style='text-align: left;'>Cluster 1</td><td style='text-align: left;'>0.188383</td><td style='text-align: left;'>0.301634</td><td style='text-align: left;'>0.191803</td>
+</tr><tr><td style='text-align: left;'>Cluster 2</td><td style='text-align: left;'>0.207880</td><td style='text-align: left;'>0.390014</td><td style='text-align: left;'>0.216675</td>
+</tr><tr><td style='text-align: left;'>Cluster 3</td><td style='text-align: left;'>0.234617</td><td style='text-align: left;'>0.684211</td><td style='text-align: left;'>0.249562</td>
+</tr><tr><td style='text-align: left;'>Cluster 4</td><td style='text-align: left;'>0.211852</td><td style='text-align: left;'>0.522745</td><td style='text-align: left;'>0.218390</td>
+</tr></tbody></table>
+<p>The liberal ratio are higher in average in clusters 3 and 4 than in clusters 1 and 2. Again it seems like it&#8217;s the most discriminative feature and it&#8217;s confirming the first part. the difference of the Dissent and Opinion Writting ratio averages in the clusters are not significative.</p>
+
+<h3 id='conclusion'>Conclusion</h3>
+
+<p>The K-means and Hierarchical clustering algorithms output both 4 different clusters, where Democrats and Republicans are not obviously divided (except for some low-numbered clusters). Ideology positions do not affect obviously the Supreme Court decisions.</p>
+        </article>
+    </section>
+
+    <footer>
+    <nav class="container">
+        <ul>
+            <li>&copy; Peter Bull, 2013</li>
+        </ul>
+    </nav>
+</footer>
+
+</body>
+<script type="text/javascript" charset="utf-8">
+    document.onreadystatechange = function() {
+        if ( document.readyState == 'complete' ) {
+            var active = document.querySelector( 'header nav.main a.active' ).innerHTML.toLowerCase(),
+                links = document.querySelectorAll( 'header nav.main li a'),
+                selection = document.querySelector( 'header .nav-selection' ),
+                subactive = document.querySelector( 'header nav.subnav a.active' ).innerHTML.toLowerCase(),
+                sublinks = document.querySelectorAll( 'header nav.subnav li a'),
+                subselection = document.querySelector( 'header .subnav-selection' ),
+                i, j, link;
+            for ( i = 0; i < links.length; i++ ) {
+                link = links[ i ];
+                link.addEventListener( 'mouseover', function() {
+                    selection.className = 'nav-selection';
+                    selection.className = 'nav-selection ' + this.innerHTML.toLowerCase();
+                });
+                link.addEventListener( 'mouseout', function() {
+                    selection.className = 'nav-selection ' + active;
+                });
+            }
+            for ( i = 0; i < sublinks.length; i++ ) {
+                link = sublinks[ i ];
+                link.addEventListener( 'mouseover', function() {
+                    subselection.className = 'subnav-selection';
+                    subselection.className = 'subnav-selection ' + this.innerHTML.toLowerCase();
+                });
+                link.addEventListener( 'mouseout', function() {
+                    subselection.className = 'subnav-selection ' + subactive;
+                });
+            }
+        }
+    };
+</script>
+
+<script type="text/javascript">
+    function init() {
+    // Instanciate sigma.js and customize rendering :
+    var sigInst = sigma.init(document.getElementById('sigma-example')).drawingProperties({
+    defaultLabelColor: '#fff',
+    defaultLabelSize: 12,
+    defaultLabelBGColor: '#fff',
+    defaultLabelHoverColor: '#000',
+    labelThreshold: 7,
+    defaultEdgeType: 'curve'
+    }).graphProperties({
+    minNodeSize: 0.5,
+    maxNodeSize: 13,
+    minEdgeSize: 1,
+    maxEdgeSize: 1,
+    sideMargin: 50
+    }).mouseProperties({
+    maxRatio: 32
+    });
+     
+    // Bind events :
+    var greyColor = '#666';
+    sigInst.bind('overnodes',function(event){
+    var nodes = event.content;
+    var neighbors = {};
+    sigInst.iterEdges(function(e){
+    if(nodes.indexOf(e.source)<0 && nodes.indexOf(e.target)<0){
+    if(!e.attr['grey']){
+    e.attr['true_color'] = e.color;
+    e.color = greyColor;
+    e.attr['grey'] = 1;
+    }
+    }else{
+    e.color = e.attr['grey'] ? e.attr['true_color'] : e.color;
+    e.attr['grey'] = 0;
+     
+    neighbors[e.source] = 1;
+    neighbors[e.target] = 1;
+    }
+    }).iterNodes(function(n){
+    if(!neighbors[n.id]){
+    if(!n.attr['grey']){
+    n.attr['true_color'] = n.color;
+    n.color = greyColor;
+    n.attr['grey'] = 1;
+    }
+    }else{
+    n.color = n.attr['grey'] ? n.attr['true_color'] : n.color;
+    n.attr['grey'] = 0;
+    }
+    }).draw(2,2,2);
+    }).bind('outnodes',function(){
+    sigInst.iterEdges(function(e){
+    e.color = e.attr['grey'] ? e.attr['true_color'] : e.color;
+    e.attr['grey'] = 0;
+    }).iterNodes(function(n){
+    n.color = n.attr['grey'] ? n.attr['true_color'] : n.color;
+    n.attr['grey'] = 0;
+    }).draw(2,2,2);
+    });
+ 
+    // Parse a GEXF encoded file to fill the graph
+    // (requires "sigma.parseGexf.js" to be included)
+    sigInst.parseGexf('/data/cite_graph.gexf');
+     
+    // Draw the graph :
+    sigInst.draw();
+    }
+     
+    if (document.addEventListener) {
+    document.addEventListener("DOMContentLoaded", init, false);
+    } else {
+    window.onload = init;
+    }
+</script>
+
+</html>
