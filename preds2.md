@@ -10,6 +10,64 @@ layout: default
 <div id="sigma-example-parent" class="sigma-parent">
 	<div class="sigma-expand" id="sigma-example"></div>
 </div>
+<div id="legend">
+	<table class="legtable">
+		<tr>
+			<td>
+				<div class="swatch" style="background-color: rgb(0, 158, 50)"> </div>
+				Criminal Procedure
+			</td>
+			<td>
+				<div class="swatch" style="background-color: rgb(177, 0, 17)"> </div>
+				Civil Rights
+			</td>
+			<td>
+				<div class="swatch" style="background-color: rgb(0, 0, 245)"> </div>
+				First Amendment
+			</td>
+			<td>
+				<div class="swatch" style="background-color: rgb(177, 0, 136)"> </div>
+				Economic Activity
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="swatch" style="background-color: rgb(25, 164, 132)"> </div>
+				Judicial Power
+			</td>
+			<td>
+				<div class="swatch" style="background-color: rgb(47, 25, 164)"> </div>
+				Due Process
+			</td>
+			<td>
+				<div class="swatch" style="background-color: rgb(164, 89, 25)"> </div>
+				Unions
+			</td>
+			<td>
+				<div class="swatch" style="background-color: rgb(25, 132, 164)"> </div>
+				Federalism
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="swatch" style="background-color: rgb(25, 68, 164)"> </div>
+				Privacy
+			</td>
+			<td>
+				<div class="swatch" style="background-color: rgb(47, 164, 25)"> </div>
+				Attorneys
+			</td>
+			<td>
+				<div class="swatch" style="background-color: rgb(111, 164, 25)"> </div>
+				Miscellaneous
+			</td>
+			<td>
+				<div class="swatch" style="background-color: rgb(164, 25, 153)"> </div>
+				Federal Taxation
+			</td>
+		</tr>
+	</table>
+</div>
 
 This is an interactive representation of the citation network of Supreme Court cases. You can zoom in and out  by scrolling in this window, and see which cases cite an influential case by hovering over that case. The cases are color-coded by the area of law, and the size of the nodes is based on how many other cases cite that node.
 

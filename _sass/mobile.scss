@@ -22,6 +22,21 @@ table th, table td {
     padding: 6px 13px;
 }
 
+.swatch{
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+}
+
+table.legtable{
+    width:100%;
+    font-size:12px;
+}
+
+table.legtable .legval{
+    display: inline-block;
+    width: 100%;
+}
 
 // ========== JUSTICE PROFILE CSS
 table.jswap {
