@@ -89,6 +89,10 @@
         <article class="container">
           <h1 class="hero">Making Predictions</h1>
           <h2 id='using_the_citations_of_supreme_court_cases_in_the_briefs_submitted_by_each_side'>Using the Citations of Supreme Court Cases in the Briefs Submitted by Each Side</h2>
+<div class='sigma-parent' id='sigma-example-parent'>
+	<div class='sigma-expand' id='sigma-example' />
+</div>
+<p>This is an interactive representation of the citation network of Supreme Court cases. You can zoom in and out by scrolling in this window, and see which cases cite an influential case by hovering over that case. The cases are color-coded by the area of law, and the size of the nodes is based on how many other cases cite that node.</p>
 
 <p>One of the pillars of the legal system in the United States is precedent&#8211;that is, if the court has already decided an issue, it will apply the same reasoning if that issue or an analogous one arises again. Written documents that are part of legal proceedings, such as opinions and briefs, cite explicitly any previous cases that support their argument or touch on the issues at hand. We wonder if understanding how often and when a case is cited could in turn be used to predict the outcome of future cases. To do this, we create a network of citations for the opinions of the Supreme Court. The opinion is written by the court when it makes a decision and cites that cases that raised issues it felt were worth addressing or had some precedential value. Briefs are submitted by both parties (petitioner and respondent) as part of their arguments to the court. These briefs also cite heavily previous court cases that they believe affect the issue at hand.</p>
 
@@ -101,14 +105,16 @@
 
 <li>Calculate network statistics, such as page rank, to try to approximate &#8220;precedent&#8221;</li>
 
+<li>Quantifty the citations that are in each side&#8217;s briefs</li>
+
 <li>Verify there is a relationship between this precedent and case outcome</li>
 </ul>
 
-<p>Below is an interactive representation of the citation network of Supreme Court cases. You can zoom in and out by scrolling in this window, and see which cases cite an influential case by hovering over that case. The cases are color-coded by the area of law:</p>
-<table><thead><tr><th><strong>Blue</strong></th><th>First Amendment</th><th><strong>Green</strong></th><th>Criminal Procedure</th><th><strong>Red</strong></th><th>Civil Rights</th></tr></thead><tbody><tr><td style='text-align: left;'><strong>Purple</strong></td><td style='text-align: left;'>Economic Activity</td><td style='text-align: left;'><strong>Green</strong></td><td style='text-align: left;'>Criminal Procedure</td><td style='text-align: left;'><strong>Red</strong></td><td style='text-align: left;'>Civil Rights</td>
-</tr></tbody></table><div class='sigma-parent' id='sigma-example-parent'>
-	<div class='sigma-expand' id='sigma-example' />
-</div>
+<p>Since we&#8217;re curious if the cases cited by briefs are a proxy for the relative strength of an argument, we want to gather statistics on our network that measure the relative importance each individual case. To do this, we compute a number of node-based statistics using the <a href='http://networkx.github.io/'>NetworkX package</a> for Python. All of these statistics attempt to capture slightly different features of the node structure, but as a whole represent the relative &#8220;importance&#8221; of a node We will then see if any of these measures correlate with the outcome of a case.</p>
+
+<p>Upon analyzing the correlation between citing cases and case outcome, we see a very small negative correlation between the measures of importance and case outcome. If, as we hypothesized, citing more important cases would strengthen an argument and make one side more likely to win, than the difference between the petitioner&#8217;s and respondent&#8217;s citations should be positively correlated with the outcome. That is, as the petitioner has a stronger argument, they should be more likely to win.</p>
+
+<p>It seems like our hypothesis that we could predict outcome using the citation graph was false. There are a number of possible reasons for this outcome. It is likely the situation that for any issues that are central to a case, both sides will cite the relevant precedential cases, one in a positive light, the other in a negative light. That means that the difference between their citations will only be on smaller less important cases that are less central to the argument.</p>
         </article>
     </section>
 

@@ -5,6 +5,8 @@ subnav: one
 layout: default
 ---
 
+![alt text]({{site.baseurl}}img/scb.jpg "The Supreme Court")
+
 ##Data Description
 
 As a matter of legal record, the proceedings of the US Supreme Court are technically part of the public domain. However, structured representations of the court's records are almost entirely behind 
