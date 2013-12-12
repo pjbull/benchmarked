@@ -26,7 +26,7 @@ From the proceeding graph, it can be seen that the most likely source for a Supr
 Supreme Court Justices are appointed to the court for life. Ostensibly, immunity from re-election concerns should insure impartiality in judicial proceeding. Additionally, the Justices are suppose to be apolitical with cases reviewal based solely on Constitutional legality. However, the Justices are still appointed by a non-apolitical entity, namely the President of the United States. It is logical to assume, that the President appoints Justices, who aline with their political philosophies. But do the outcomes of the Supreme Court review truly reflect a political bias of the Justices? More precisely, do certain Justices  tend to vote conservative or liberal on a particular legal issue. Please check out the [Supreme Course Database](http://scdb.wustl.edu/documentation.php?var=decisionDirection) website for descriptions of what liberal and conservative mean in context to the legal system. In general, these legal versions of liberal/conservative aline well with what we consider political ideologies. 
 
 
-[alt text]({{site.baseurl}}img/Justice_Profiles.png "Justice Profiles")
+![alt text]({{site.baseurl}}img/chief_justice_john_roberts.jpg "Justice Profiles")
 
 Viewing the profiles above, one can see that each Justice has a unique voting pattern. However, interestingly, most profiles have ideological voting percentages within the range of 40-60%, regardless of law issue. Because Justices tend not to vote heavily towards one ideological direction, this result suggests that Justices do not vote on idealogical basis but rather consider each case on its own Constitutional legality.
 
