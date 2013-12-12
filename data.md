@@ -10,7 +10,7 @@ layout: default
 ##Data Description
 
 As a matter of legal record, the proceedings of the US Supreme Court are technically part of the public domain. However, structured representations of the court's records are almost entirely behind 
-the paywalls of Lexis-Nexis and Westlaw. We've compiled data on the court from four separate pubically available sources that range from a well-cleaned, curated datasets to raw pdf documents of legal 
+the paywalls of Lexis-Nexis and Westlaw. We've compiled data on the court from four separate pubically available sources that range from a well-cleaned, curated datasets to raw PDF documents of legal 
 proceedings. Each source provides a different angle on the history of court that we can leverage in our analysis.
 
 ###The Harold J. Spaeth Dataset
@@ -40,6 +40,5 @@ influence among the Supreme Court opinions.
 ###Supreme Court Briefs Made Available by the American Bar Association
 
 The [American Bar Association](http://www.americanbar.org/aba.html) publishes the text of briefs to the Supreme Court in PDF format. Before each case the court takes, the petitioner and the respondent submit 
-a merit brief to the court which outlines their argument. We created a script to download all of the pdfs from 2003-2009, open the documents, and parse them for citations of Supreme Court opinions. 
-We then matched these briefs with the opinion that the court gave when the case was decided.
+a [merit brief](http://en.wikipedia.org/wiki/Brief_%28law%29) to the court which outlines their argument. We created a script to download all of the pdfs from 2003-2009, open the documents, and parse them for citations of Supreme Court opinions. We then matched these briefs with the opinion that the court gave when the case was decided.
 	
