@@ -37,7 +37,7 @@ One of the most well-known technique to discover groups among unlbeled data is t
 for this clustering task are:
 
 * **Liberal Ratio**: Ratio of Liberal (Vs. Conservative) decisions for each justice,
-* **Opinion Written Ratio**: The ratio of cases where the given justice wrote an opinion. Each justice can or callot write an opinion after a case is voted,
+* **Opinion Written Ratio**: The ratio of cases where the given justice was the author of an opinion. Each justice can choose to write an opinion or choose to add their name to one that another justice authors.
 * **Ratio of Dissent with Majority**: The ratio of cases where the given justice disagreed with the majority vote.
 
 We perform the K-means algorithm on this unlabeled data with a number of clusters varying from 2 to 14. We use the Elbow method to find the "best" number of clusters: it is the threshold after

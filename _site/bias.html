@@ -17,7 +17,8 @@
   <script type="text/javascript" charset="utf-8" src="js/matchmedia.js"></script>
   <script type="text/javascript" charset="utf-8" src="js/picturefill.js"></script>
   <script type="text/javascript" charset="utf-8" src="js/sigma.min.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/sigma.parseGexf.js"></script>
+  <script type="text/javascript" charset="utf-8" src="js/sigma.parseGexf.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </head>
 
 <body>
@@ -125,7 +126,7 @@
 <ul>
 <li><strong>Liberal Ratio</strong>: Ratio of Liberal (Vs. Conservative) decisions for each justice,</li>
 
-<li><strong>Opinion Written Ratio</strong>: The ratio of cases where the given justice wrote an opinion. Each justice can or callot write an opinion after a case is voted,</li>
+<li><strong>Opinion Written Ratio</strong>: The ratio of cases where the given justice was the author of an opinion. Each justice can choose to write an opinion or choose to add their name to one that another justice authors.</li>
 
 <li><strong>Ratio of Dissent with Majority</strong>: The ratio of cases where the given justice disagreed with the majority vote.</li>
 </ul>
@@ -238,6 +239,60 @@
             }
         }
     };
+</script>
+
+
+<script type="text/javascript">
+// Declare Arrays
+    imgList = new Array();
+    imgList["roberts"] = new Array();
+    imgList["scalia"] = new Array();
+    imgList["kennedy"] = new Array();
+    imgList["thomas"] = new Array();
+    imgList["ginsburg"] = new Array();
+    imgList["breyer"] = new Array();
+    imgList["alito"] = new Array();
+    imgList["sotomayor"] = new Array();
+    imgList["kagan"] = new Array();
+
+//Set values for each mouse state
+  imgList["roberts"]["out"] = "img/prof/JGRoberts.png";
+  imgList["roberts"]["over"] = "img/prof/JGRoberts.png";
+
+  imgList["scalia"]["out"] = "img/prof/JGRoberts.png";
+  imgList["scalia"]["over"] = "img/prof/AScalia.png";
+
+  imgList["kennedy"]["out"] = "img/prof/JGRoberts.png";
+  imgList["kennedy"]["over"] = "img/prof/AKennedy.png";
+
+  imgList["thomas"]["out"] = "img/prof/JGRoberts.png";
+  imgList["thomas"]["over"] = "img/prof/CThomas.png";
+
+  imgList["ginsburg"]["out"] = "img/prof/JGRoberts.png";
+  imgList["ginsburg"]["over"] = "img/prof/RGinsburg.png";
+
+  imgList["breyer"]["out"] = "img/prof/JGRoberts.png";
+  imgList["breyer"]["over"] = "img/prof/SBreyer.png";
+
+
+  imgList["alito"]["out"] = "img/prof/JGRoberts.png";
+  imgList["alito"]["over"] = "img/prof/SAlito.png";
+
+  imgList["sotomayor"]["out"] = "img/prof/JGRoberts.png";
+  imgList["sotomayor"]["over"] = "img/prof/SSotomayor.png";
+
+  imgList["kagan"]["out"] = "img/prof/JGRoberts.png";
+  imgList["kagan"]["over"] = "img/prof/EKagan.png";
+
+
+//Add the swapping functions
+  $("img.justice").mouseover(function(){
+    $("img#jprof").attr("src", imgList[ $(this).attr("id") ]["over"]);
+  });
+
+  $("img.justice").mouseout(function(){
+    $("img#jprof").attr("src", imgList[ $(this).attr("id") ]["out"]);
+  });
 </script>
 
 <script type="text/javascript">

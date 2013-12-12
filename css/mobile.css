@@ -14,7 +14,47 @@ table th, table td {
   border: 1px solid #dddddd;
   padding: 6px 13px; }
 
-/* line 25, ../_sass/mobile.scss */
+/* line 27, ../_sass/mobile.scss */
+table.jswap {
+  width: 130%;
+  height: 700px; }
+
+/* line 32, ../_sass/mobile.scss */
+table.jswap td, th, tr {
+  border: 0px solid #dddddd;
+  padding: 0px 0px;
+  vertical-align: top; }
+
+/* line 38, ../_sass/mobile.scss */
+td.jleft, td.jright {
+  width: 110px; }
+
+/* line 42, ../_sass/mobile.scss */
+#dembar {
+  width: 100%;
+  height: 30px;
+  background-color: #377eb8; }
+
+/* line 48, ../_sass/mobile.scss */
+#repbar {
+  width: 100%;
+  height: 30px;
+  background-color: #e41a1c; }
+
+/* line 54, ../_sass/mobile.scss */
+#jprof {
+  width: 100%; }
+
+/* line 58, ../_sass/mobile.scss */
+.justice {
+  width: 100%; }
+
+/* line 62, ../_sass/mobile.scss */
+.justice:hover {
+  width: 100%;
+  border: 1px solid #dddddd; }
+
+/* line 69, ../_sass/mobile.scss */
 .sigma-parent {
   position: relative;
   border-radius: 4px;
@@ -23,7 +63,7 @@ table th, table td {
   width: 850px;
   display: inline-block; }
 
-/* line 34, ../_sass/mobile.scss */
+/* line 79, ../_sass/mobile.scss */
 .sigma-expand {
   width: 100%;
   height: 100%;
@@ -32,7 +72,7 @@ table th, table td {
   display: block;
   overflow: visible; }
 
-/* line 43, ../_sass/mobile.scss */
+/* line 88, ../_sass/mobile.scss */
 body {
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   margin: 0;
@@ -40,16 +80,16 @@ body {
   font-size: 1.2em;
   min-width: 257px; }
 
-/* line 51, ../_sass/mobile.scss */
+/* line 96, ../_sass/mobile.scss */
 a {
   color: #5ea5ff;
   text-decoration: none; }
 
-/* line 56, ../_sass/mobile.scss */
+/* line 101, ../_sass/mobile.scss */
 a:hover {
   text-decoration: underline; }
 
-/* line 60, ../_sass/mobile.scss */
+/* line 105, ../_sass/mobile.scss */
 h1, h2, h3, h4, h5 {
   color: #222222;
   font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
@@ -57,48 +97,48 @@ h1, h2, h3, h4, h5 {
   font-weight: normal;
   line-height: 0.8em;
   margin: 0.4em 0; }
-  /* line 67, ../_sass/mobile.scss */
+  /* line 112, ../_sass/mobile.scss */
   h1 a, h2 a, h3 a, h4 a, h5 a {
     color: inherit; }
-  /* line 70, ../_sass/mobile.scss */
+  /* line 115, ../_sass/mobile.scss */
   h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover {
     text-decoration: none; }
 
-/* line 75, ../_sass/mobile.scss */
+/* line 120, ../_sass/mobile.scss */
 h1 {
   font-size: 4em; }
 
-/* line 79, ../_sass/mobile.scss */
+/* line 124, ../_sass/mobile.scss */
 h2 {
   font-size: 3.5em; }
 
-/* line 83, ../_sass/mobile.scss */
+/* line 128, ../_sass/mobile.scss */
 h3 {
   font-size: 3em; }
 
-/* line 87, ../_sass/mobile.scss */
+/* line 132, ../_sass/mobile.scss */
 h4 {
   font-size: 2.5em; }
 
-/* line 91, ../_sass/mobile.scss */
+/* line 136, ../_sass/mobile.scss */
 h5 {
   font-size: 2em; }
 
-/* line 95, ../_sass/mobile.scss */
+/* line 140, ../_sass/mobile.scss */
 h1.hero {
   font-size: 4.5em;
   margin: 0.5em 0 0.1em; }
 
-/* line 100, ../_sass/mobile.scss */
+/* line 145, ../_sass/mobile.scss */
 p {
   line-height: 1.5em;
   margin: 1em 0; }
 
-/* line 105, ../_sass/mobile.scss */
+/* line 150, ../_sass/mobile.scss */
 .wrapper {
   padding: 20px; }
 
-/* line 109, ../_sass/mobile.scss */
+/* line 154, ../_sass/mobile.scss */
 .container {
   zoom: 1;
   max-width: 68em;
@@ -114,14 +154,14 @@ p {
   .container:after {
     clear: both; }
 
-/* line 115, ../_sass/mobile.scss */
+/* line 160, ../_sass/mobile.scss */
 header a {
   color: inherit; }
-  /* line 117, ../_sass/mobile.scss */
+  /* line 162, ../_sass/mobile.scss */
   header a:hover {
     text-decoration: none; }
 
-/* line 122, ../_sass/mobile.scss */
+/* line 167, ../_sass/mobile.scss */
 header nav ul {
   font-size: 16px;
   zoom: 1;
@@ -136,79 +176,79 @@ header nav ul {
   header nav ul:after {
     clear: both; }
 
-/* line 130, ../_sass/mobile.scss */
+/* line 175, ../_sass/mobile.scss */
 header .logo {
   color: #a31010; }
 
-/* line 134, ../_sass/mobile.scss */
+/* line 179, ../_sass/mobile.scss */
 header nav li {
   float: left; }
-  /* line 136, ../_sass/mobile.scss */
+  /* line 181, ../_sass/mobile.scss */
   header nav li a {
     padding-right: 20px; }
 
-/* line 141, ../_sass/mobile.scss */
+/* line 186, ../_sass/mobile.scss */
 header nav.subnav {
   z-index: 2;
   margin: 10px 0 -40px;
   position: absolute;
   right: 0; }
 
-/* line 148, ../_sass/mobile.scss */
+/* line 193, ../_sass/mobile.scss */
 header .subnav a {
   padding-right: 0;
   padding-left: 20px; }
 
-/* line 153, ../_sass/mobile.scss */
+/* line 198, ../_sass/mobile.scss */
 header .nav-slider {
   height: 10px;
   background-color: #111111;
   position: relative; }
 
-/* line 159, ../_sass/mobile.scss */
+/* line 204, ../_sass/mobile.scss */
 header .nav-selection {
   position: absolute;
   height: 10px;
   background-color: #a31010; }
 
-/* line 165, ../_sass/mobile.scss */
+/* line 210, ../_sass/mobile.scss */
 header .nav-selection.two {
   width: 75px;
   left: 49px; }
 
-/* line 170, ../_sass/mobile.scss */
+/* line 215, ../_sass/mobile.scss */
 header .nav-selection.one {
   width: 40px;
   left: 0; }
 
-/* line 175, ../_sass/mobile.scss */
+/* line 220, ../_sass/mobile.scss */
 header .nav-selection.three {
   width: 90px;
   left: 90px; }
 
-/* line 180, ../_sass/mobile.scss */
+/* line 225, ../_sass/mobile.scss */
 header .subnav-selection {
   position: absolute;
   height: 10px;
   background-color: #111111;
   width: 50px; }
 
-/* line 187, ../_sass/mobile.scss */
+/* line 232, ../_sass/mobile.scss */
 header .subnav-selection.one {
   right: 140px;
   width: 42px; }
 
-/* line 192, ../_sass/mobile.scss */
+/* line 237, ../_sass/mobile.scss */
 header .subnav-selection.two {
   right: 87px;
   width: 35px; }
 
-/* line 197, ../_sass/mobile.scss */
+/* line 242, ../_sass/mobile.scss */
 header .subnav-selection.three {
   right: 0;
   width: 69px; }
 
-/* line 202, ../_sass/mobile.scss */
+/* line 247, ../_sass/mobile.scss */
 header .profile {
   float: right;
   height: 58px;
@@ -216,52 +256,52 @@ header .profile {
   margin-top: 14px;
   text-align: right; }
 
-/* line 210, ../_sass/mobile.scss */
+/* line 255, ../_sass/mobile.scss */
 header .social {
   width: 16px;
   float: left; }
 
-/* line 215, ../_sass/mobile.scss */
+/* line 260, ../_sass/mobile.scss */
 header .social img {
   display: block;
   margin: 9px 0; }
 
-/* line 220, ../_sass/mobile.scss */
+/* line 265, ../_sass/mobile.scss */
 header .avatar {
   height: 58px;
   width: 58px;
   border: 2px solid #111111;
   float: left;
   margin-left: 10px; }
-  /* line 226, ../_sass/mobile.scss */
+  /* line 271, ../_sass/mobile.scss */
   header .avatar img {
     width: 100%;
     height: 100%; }
   @media (max-width: 20.4375em) {
-    /* line 220, ../_sass/mobile.scss */
+    /* line 265, ../_sass/mobile.scss */
     header .avatar {
       display: none; } }
 
-/* line 235, ../_sass/mobile.scss */
+/* line 280, ../_sass/mobile.scss */
 .github {
   display: none; }
 
-/* line 239, ../_sass/mobile.scss */
+/* line 284, ../_sass/mobile.scss */
 footer {
   margin-top: 30px; }
 
-/* line 243, ../_sass/mobile.scss */
+/* line 288, ../_sass/mobile.scss */
 footer ul {
   padding: 0; }
 
-/* line 247, ../_sass/mobile.scss */
+/* line 292, ../_sass/mobile.scss */
 footer nav {
   border-width: 10px 0 0;
   border-style: solid;
   border-color: #111111;
   padding-top: 20px; }
 
-/* line 254, ../_sass/mobile.scss */
+/* line 299, ../_sass/mobile.scss */
 footer nav ul li {
   display: block;
   float: left;
@@ -271,7 +311,7 @@ footer nav ul li {
   footer nav ul li:last-child {
     margin-right: 0; }
   @media screen and (max-width: 40em) {
-    /* line 254, ../_sass/mobile.scss */
+    /* line 299, ../_sass/mobile.scss */
     footer nav ul li {
       display: block;
       float: left;
@@ -281,64 +321,64 @@ footer nav ul li {
       /* line 62, ../_sass/neat/grid/_grid.scss */
       footer nav ul li:last-child {
         margin-right: 0; }
-      /* line 259, ../_sass/mobile.scss */
+      /* line 304, ../_sass/mobile.scss */
       footer nav ul li:nth-child(2n) {
         margin-right: 0; } }
 
-/* line 265, ../_sass/mobile.scss */
+/* line 310, ../_sass/mobile.scss */
 ul, ol {
   line-height: 1.5em;
   padding-left: 20px;
   font-size: 1em; }
 
-/* line 271, ../_sass/mobile.scss */
+/* line 316, ../_sass/mobile.scss */
 ul {
   list-style: square; }
 
-/* line 275, ../_sass/mobile.scss */
+/* line 320, ../_sass/mobile.scss */
 .post {
   border-top: 1px solid #222222;
   margin-bottom: 5em; }
 
-/* line 280, ../_sass/mobile.scss */
+/* line 325, ../_sass/mobile.scss */
 .post:first-child, .post.no-border {
   border-top: none; }
 
-/* line 284, ../_sass/mobile.scss */
+/* line 329, ../_sass/mobile.scss */
 .post-header .date {
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   text-decoration: lowercase;
   margin: 1em 0 -1.2em; }
 
-/* line 290, ../_sass/mobile.scss */
+/* line 335, ../_sass/mobile.scss */
 #projects {
   margin-top: 40px; }
 
-/* line 294, ../_sass/mobile.scss */
+/* line 339, ../_sass/mobile.scss */
 .project {
   display: block;
   border: 1px solid #cccccc;
   margin-bottom: 2.35765%;
   padding: 2.35765%;
   color: inherit; }
-  /* line 300, ../_sass/mobile.scss */
+  /* line 345, ../_sass/mobile.scss */
   .project:hover {
     border-color: #5ea5ff;
     text-decoration: none; }
 
-/* line 306, ../_sass/mobile.scss */
+/* line 351, ../_sass/mobile.scss */
 .project h2 {
   font-size: 3em; }
 
-/* line 310, ../_sass/mobile.scss */
+/* line 355, ../_sass/mobile.scss */
 .project:nth-child(2n) {
   margin-right: 0; }
 
-/* line 314, ../_sass/mobile.scss */
+/* line 359, ../_sass/mobile.scss */
 .pagination {
   margin-top: 30px; }
 
-/* line 318, ../_sass/mobile.scss */
+/* line 363, ../_sass/mobile.scss */
 .button, .key-selector a {
   background: #222222;
   color: white;
@@ -349,7 +389,7 @@ ul {
   font-family: "Bebas Neue", Helvetica, Arial, sans-serif;
   font-size: 1.2em; }
 
-/* line 329, ../_sass/mobile.scss */
+/* line 374, ../_sass/mobile.scss */
 .key-selector a {
   float: left;
   padding: 0.5em 0.4em 0.4em;
@@ -357,39 +397,39 @@ ul {
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   font-size: 0.9em; }
 
-/* line 337, ../_sass/mobile.scss */
+/* line 382, ../_sass/mobile.scss */
 .key-selector a.active {
   background-color: #a31010; }
 
-/* line 341, ../_sass/mobile.scss */
+/* line 386, ../_sass/mobile.scss */
 .button:hover, .button:active {
   -webkit-box-shadow: 0 0 1px 2px black inset;
   box-shadow: 0 0 1px 2px black inset; }
 
-/* line 345, ../_sass/mobile.scss */
+/* line 390, ../_sass/mobile.scss */
 .pagination .button span {
   position: relative; }
 
-/* line 349, ../_sass/mobile.scss */
+/* line 394, ../_sass/mobile.scss */
 .pagination a.previous span:before {
   content: "←";
   position: absolute;
   left: -30px; }
 
-/* line 355, ../_sass/mobile.scss */
+/* line 400, ../_sass/mobile.scss */
 .pagination a.next span:after {
   content: "→";
   position: absolute;
   left: 50px; }
 
-/* line 361, ../_sass/mobile.scss */
+/* line 406, ../_sass/mobile.scss */
 pre {
   font-family: 'Source Code Pro', monospace; }
 
-/* line 365, ../_sass/mobile.scss */
+/* line 410, ../_sass/mobile.scss */
 .chords {
   color: white; }
 
-/* line 369, ../_sass/mobile.scss */
+/* line 414, ../_sass/mobile.scss */
 .chords strong {
   color: #a31010; }

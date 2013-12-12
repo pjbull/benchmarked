@@ -32,6 +32,60 @@
     };
 </script>
 
+
+<script type="text/javascript">
+// Declare Arrays
+    imgList = new Array();
+    imgList["roberts"] = new Array();
+    imgList["scalia"] = new Array();
+    imgList["kennedy"] = new Array();
+    imgList["thomas"] = new Array();
+    imgList["ginsburg"] = new Array();
+    imgList["breyer"] = new Array();
+    imgList["alito"] = new Array();
+    imgList["sotomayor"] = new Array();
+    imgList["kagan"] = new Array();
+
+//Set values for each mouse state
+  imgList["roberts"]["out"] = "{{site.baseurl}}img/prof/JGRoberts.png";
+  imgList["roberts"]["over"] = "{{site.baseurl}}img/prof/JGRoberts.png";
+
+  imgList["scalia"]["out"] = "{{site.baseurl}}img/prof/JGRoberts.png";
+  imgList["scalia"]["over"] = "{{site.baseurl}}img/prof/AScalia.png";
+
+  imgList["kennedy"]["out"] = "{{site.baseurl}}img/prof/JGRoberts.png";
+  imgList["kennedy"]["over"] = "{{site.baseurl}}img/prof/AKennedy.png";
+
+  imgList["thomas"]["out"] = "{{site.baseurl}}img/prof/JGRoberts.png";
+  imgList["thomas"]["over"] = "{{site.baseurl}}img/prof/CThomas.png";
+
+  imgList["ginsburg"]["out"] = "{{site.baseurl}}img/prof/JGRoberts.png";
+  imgList["ginsburg"]["over"] = "{{site.baseurl}}img/prof/RGinsburg.png";
+
+  imgList["breyer"]["out"] = "{{site.baseurl}}img/prof/JGRoberts.png";
+  imgList["breyer"]["over"] = "{{site.baseurl}}img/prof/SBreyer.png";
+
+
+  imgList["alito"]["out"] = "{{site.baseurl}}img/prof/JGRoberts.png";
+  imgList["alito"]["over"] = "{{site.baseurl}}img/prof/SAlito.png";
+
+  imgList["sotomayor"]["out"] = "{{site.baseurl}}img/prof/JGRoberts.png";
+  imgList["sotomayor"]["over"] = "{{site.baseurl}}img/prof/SSotomayor.png";
+
+  imgList["kagan"]["out"] = "{{site.baseurl}}img/prof/JGRoberts.png";
+  imgList["kagan"]["over"] = "{{site.baseurl}}img/prof/EKagan.png";
+
+
+//Add the swapping functions
+  $("img.justice").mouseover(function(){
+    $("img#jprof").attr("src", imgList[ $(this).attr("id") ]["over"]);
+  });
+
+  $("img.justice").mouseout(function(){
+    $("img#jprof").attr("src", imgList[ $(this).attr("id") ]["out"]);
+  });
+</script>
+
 <script type="text/javascript">
     function init() {
     // Instanciate sigma.js and customize rendering :

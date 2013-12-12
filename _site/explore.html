@@ -17,7 +17,8 @@
   <script type="text/javascript" charset="utf-8" src="js/matchmedia.js"></script>
   <script type="text/javascript" charset="utf-8" src="js/picturefill.js"></script>
   <script type="text/javascript" charset="utf-8" src="js/sigma.min.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/sigma.parseGexf.js"></script>
+  <script type="text/javascript" charset="utf-8" src="js/sigma.parseGexf.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </head>
 
 <body>
@@ -109,9 +110,41 @@
 <h1 id='exploring_judicial_impartiality'>Exploring Judicial Impartiality</h1>
 
 <p>Supreme Court Justices are appointed to the court for life. Ostensibly, immunity from re-election concerns should insure impartiality in judicial proceeding. Additionally, the Justices are suppose to be apolitical with cases reviewal based solely on Constitutional legality. However, the Justices are still appointed by a non-apolitical entity, namely the President of the United States. It is logical to assume, that the President appoints Justices, who aline with their political philosophies. But do the outcomes of the Supreme Court review truly reflect a political bias of the Justices? More precisely, do certain Justices tend to vote conservative or liberal on a particular legal issue. Please check out the <a href='http://scdb.wustl.edu/documentation.php?var=decisionDirection'>Supreme Course Database</a> website for descriptions of what liberal and conservative mean in context to the legal system. In general, these legal versions of liberal/conservative aline well with what we consider political ideologies.</p>
+<table class='jswap'>
+	<tr>
+		<!-- DEMS -->
+		<td class='jleft'>
+			<div id='dembar' />
+			<br />
+			<img class='justice' id='ginsburg' src='img/headshot/rg.jpg' />
+			<br />
+			<img class='justice' id='breyer' src='img/headshot/sb.jpg' />
+			<br />
+			<img class='justice' id='sotomayor' src='img/headshot/ss.jpg' />
+			<br />
+			<img class='justice' id='kagan' src='img/headshot/ek.jpg' />
+		</td>
 
-<p><img alt='alt text' src='img/JGRoberts.png' /></p>
-
+		<td>
+			<img id='jprof' src='img/prof/JGRoberts.png' />
+		</td>
+		
+		<!-- REPS -->
+		<td class='jright'>
+			<div id='repbar' />
+			<br />
+			<img class='justice' id='roberts' src='img/headshot/jr.jpg' />
+			<br />
+			<img class='justice' id='scalia' src='img/headshot/as.jpg' />
+			<br />
+			<img class='justice' id='kennedy' src='img/headshot/ak.jpg' />
+			<br />
+			<img class='justice' id='thomas' src='img/headshot/ct.jpg' />
+			<br />
+			<img class='justice' id='alito' src='img/headshot/sa.jpg' />
+		</td>
+	</tr>
+</table>
 <p>Viewing the profiles above, one can see that each Justice has a unique voting pattern. However, interestingly, most profiles have ideological voting percentages within the range of 40-60%, regardless of law issue. Because Justices tend not to vote heavily towards one ideological direction, this result suggests that Justices do not vote on idealogical basis but rather consider each case on its own Constitutional legality.</p>
         </article>
     </section>
@@ -157,6 +190,60 @@
             }
         }
     };
+</script>
+
+
+<script type="text/javascript">
+// Declare Arrays
+    imgList = new Array();
+    imgList["roberts"] = new Array();
+    imgList["scalia"] = new Array();
+    imgList["kennedy"] = new Array();
+    imgList["thomas"] = new Array();
+    imgList["ginsburg"] = new Array();
+    imgList["breyer"] = new Array();
+    imgList["alito"] = new Array();
+    imgList["sotomayor"] = new Array();
+    imgList["kagan"] = new Array();
+
+//Set values for each mouse state
+  imgList["roberts"]["out"] = "img/prof/JGRoberts.png";
+  imgList["roberts"]["over"] = "img/prof/JGRoberts.png";
+
+  imgList["scalia"]["out"] = "img/prof/JGRoberts.png";
+  imgList["scalia"]["over"] = "img/prof/AScalia.png";
+
+  imgList["kennedy"]["out"] = "img/prof/JGRoberts.png";
+  imgList["kennedy"]["over"] = "img/prof/AKennedy.png";
+
+  imgList["thomas"]["out"] = "img/prof/JGRoberts.png";
+  imgList["thomas"]["over"] = "img/prof/CThomas.png";
+
+  imgList["ginsburg"]["out"] = "img/prof/JGRoberts.png";
+  imgList["ginsburg"]["over"] = "img/prof/RGinsburg.png";
+
+  imgList["breyer"]["out"] = "img/prof/JGRoberts.png";
+  imgList["breyer"]["over"] = "img/prof/SBreyer.png";
+
+
+  imgList["alito"]["out"] = "img/prof/JGRoberts.png";
+  imgList["alito"]["over"] = "img/prof/SAlito.png";
+
+  imgList["sotomayor"]["out"] = "img/prof/JGRoberts.png";
+  imgList["sotomayor"]["over"] = "img/prof/SSotomayor.png";
+
+  imgList["kagan"]["out"] = "img/prof/JGRoberts.png";
+  imgList["kagan"]["over"] = "img/prof/EKagan.png";
+
+
+//Add the swapping functions
+  $("img.justice").mouseover(function(){
+    $("img#jprof").attr("src", imgList[ $(this).attr("id") ]["over"]);
+  });
+
+  $("img.justice").mouseout(function(){
+    $("img#jprof").attr("src", imgList[ $(this).attr("id") ]["out"]);
+  });
 </script>
 
 <script type="text/javascript">

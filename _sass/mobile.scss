@@ -22,6 +22,50 @@ table th, table td {
     padding: 6px 13px;
 }
 
+
+// ========== JUSTICE PROFILE CSS
+table.jswap {
+    width: 130%;
+    height: 700px;
+}
+
+table.jswap td, th, tr{
+    border: 0px solid rgb(221, 221, 221);
+    padding: 0px 0px;
+    vertical-align: top;
+}
+
+td.jleft, td.jright {
+    width: 110px;
+}
+
+#dembar {
+    width: 100%;
+    height: 30px;
+    background-color: #377eb8;
+}
+
+#repbar{
+    width: 100%;
+    height: 30px;
+    background-color: #e41a1c;
+}
+
+#jprof{
+    width: 100%;
+}
+
+.justice{
+    width: 100%;
+}
+
+.justice:hover{
+    width: 100%;
+    border: 1px solid rgb(221, 221, 221);
+}
+
+// END ========== JUSTICE PROFILE CSS
+
 .sigma-parent {
     position: relative;
     border-radius: 4px;
@@ -30,6 +74,7 @@ table th, table td {
     width: 850px;
     display: inline-block;
 }
+
 
 .sigma-expand {
     width: 100%;
