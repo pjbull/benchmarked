@@ -4,18 +4,7 @@ nav: two
 subnav: one
 layout: default
 ---
-
-##Include our analysis here
-- Graph structure of cases
-- Analysis of "bias"
-- Appointees throughout historyr
-- Road to supreme court flow chart
-- Distribution of case "Areas of law"
-- etc., etc., etc., 
-
-
----
-The first step in attempting to identify bias in the Supreme Court is to describe want we actually mean by 'bias'. In context to the Supreme Court, bias is meant as a preferential treatment in how a particular case is handled by the Court. When exploring how a case is chosen to be reviewed  and ultimately decided upon by the Court, the major forms of possible bias are a selection bias and judicial impartiality. 
+The first step in attempting to identify bias in the Supreme Court is to describe what we actually mean by 'bias'. In the context of the Supreme Court, bias is meant as a preferential treatment in how a particular case is handled by the Court. When exploring how a case is chosen to be reviewed  and ultimately decided upon by the Court, the major forms of possible bias are a selection bias and judicial impartiality. 
 
 
 #Exploring Selection Bias
