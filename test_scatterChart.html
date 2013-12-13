@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link media="all" href="/Users/bull/bower_components/nvd3/src/nv.d3.css" type="text/css" rel="stylesheet" />
+<script src="/Users/bull/bower_components/d3/d3.min.js" type="text/javascript"></script>
+<script src="/Users/bull/bower_components/nvd3/nv.d3.min.js" type="text/javascript"></script>
+
+</head>
+<body>
+
+
+
+<h2>scatterChart</h2>
+
+<div id="scatterChart"><svg style="height:350px;"></svg></div>
+
+
+<script type="text/javascript">
+    nv.addGraph(function() {
+        var chart = nv.models.scatterChart()
+            .showDistX(true)
+            .showDistY(true)
+            .color(d3.scale.category10().range());
+        chart.xAxis
+            .tickFormat(d3.format(',.02f'));
+        chart.yAxis
+            .tickFormat(d3.format(',.02f'));
+        chart.tooltipContent(function(key, y, e, graph) {
+            var x = String(graph.point.x);
+            var y = String(graph.point.y);
+            if(key == 'serie 1'){
+                var y =  String(graph.point.y)  + ' calls';
+            }
+            if(key == 'serie 2'){
+                var y =  String(graph.point.y)  + ' calls';
+            }
+            if(key == 'serie 3'){
+                var y =  String(graph.point.y)  + ' calls';
+            }
+            tooltip_str = '<center><b>'+key+'</b></center>' + y + ' at ' + x;
+            return tooltip_str;
+        });
+        chart.showLegend(true);
+        d3.select('#scatterChart svg')
+            .datum(data_scatterChart)
+            .transition().duration(500)
+            .attr('height', 350)
+            .call(chart);
+
+    return chart;
+});data_scatterChart=[{"values": [{"y": 0, "x": 1, "shape": "circle", "size": "1"}, {"y": 4, "x": 10, "shape": "circle", "size": "1"}, {"y": 20, "x": 6, "shape": "circle", "size": "1"}, {"y": 15, "x": 12, "shape": "circle", "size": "1"}, {"y": 40, "x": 13, "shape": "circle", "size": "1"}, {"y": 10, "x": 13, "shape": "circle", "size": "1"}, {"y": 60, "x": 10, "shape": "circle", "size": "1"}, {"y": 70, "x": 9, "shape": "circle", "size": "1"}, {"y": 16, "x": 14, "shape": "circle", "size": "1"}, {"y": 27, "x": 19, "shape": "circle", "size": "1"}, {"y": 100, "x": 17, "shape": "circle", "size": "1"}, {"y": 33, "x": 21, "shape": "circle", "size": "1"}, {"y": 12, "x": 21, "shape": "circle", "size": "1"}, {"y": 104, "x": 17, "shape": "circle", "size": "1"}, {"y": 42, "x": 15, "shape": "circle", "size": "1"}, {"y": 90, "x": 24, "shape": "circle", "size": "1"}, {"y": 64, "x": 18, "shape": "circle", "size": "1"}, {"y": 153, "x": 18, "shape": "circle", "size": "1"}, {"y": 144, "x": 28, "shape": "circle", "size": "1"}, {"y": 38, "x": 22, "shape": "circle", "size": "1"}, {"y": 200, "x": 27, "shape": "circle", "size": "1"}, {"y": 84, "x": 29, "shape": "circle", "size": "1"}, {"y": 220, "x": 25, "shape": "circle", "size": "1"}, {"y": 138, "x": 32, "shape": "circle", "size": "1"}, {"y": 216, "x": 30, "shape": "circle", "size": "1"}, {"y": 250, "x": 31, "shape": "circle", "size": "1"}, {"y": 104, "x": 33, "shape": "circle", "size": "1"}, {"y": 135, "x": 31, "shape": "circle", "size": "1"}, {"y": 28, "x": 34, "shape": "circle", "size": "1"}, {"y": 232, "x": 32, "shape": "circle", "size": "1"}, {"y": 60, "x": 33, "shape": "circle", "size": "1"}, {"y": 155, "x": 40, "shape": "circle", "size": "1"}, {"y": 224, "x": 35, "shape": "circle", "size": "1"}, {"y": 165, "x": 43, "shape": "circle", "size": "1"}, {"y": 102, "x": 40, "shape": "circle", "size": "1"}, {"y": 210, "x": 40, "shape": "circle", "size": "1"}, {"y": 144, "x": 40, "shape": "circle", "size": "1"}, {"y": 74, "x": 40, "shape": "circle", "size": "1"}, {"y": 380, "x": 45, "shape": "circle", "size": "1"}, {"y": 39, "x": 48, "shape": "circle", "size": "1"}, {"y": 280, "x": 50, "shape": "circle", "size": "1"}, {"y": 164, "x": 45, "shape": "circle", "size": "1"}, {"y": 126, "x": 46, "shape": "circle", "size": "1"}, {"y": 172, "x": 49, "shape": "circle", "size": "1"}, {"y": 308, "x": 49, "shape": "circle", "size": "1"}, {"y": 405, "x": 55, "shape": "circle", "size": "1"}, {"y": 138, "x": 50, "shape": "circle", "size": "1"}, {"y": 423, "x": 55, "shape": "circle", "size": "1"}, {"y": 336, "x": 53, "shape": "circle", "size": "1"}, {"y": 147, "x": 52, "shape": "circle", "size": "1"}], "key": "serie 1", "yAxis": "1"}, {"values": [{"y": 0, "x": 1, "shape": "cross", "size": "10"}, {"y": 8, "x": 10, "shape": "cross", "size": "10"}, {"y": 40, "x": 6, "shape": "cross", "size": "10"}, {"y": 30, "x": 12, "shape": "cross", "size": "10"}, {"y": 80, "x": 13, "shape": "cross", "size": "10"}, {"y": 20, "x": 13, "shape": "cross", "size": "10"}, {"y": 120, "x": 10, "shape": "cross", "size": "10"}, {"y": 140, "x": 9, "shape": "cross", "size": "10"}, {"y": 32, "x": 14, "shape": "cross", "size": "10"}, {"y": 54, "x": 19, "shape": "cross", "size": "10"}, {"y": 200, "x": 17, "shape": "cross", "size": "10"}, {"y": 66, "x": 21, "shape": "cross", "size": "10"}, {"y": 24, "x": 21, "shape": "cross", "size": "10"}, {"y": 208, "x": 17, "shape": "cross", "size": "10"}, {"y": 84, "x": 15, "shape": "cross", "size": "10"}, {"y": 180, "x": 24, "shape": "cross", "size": "10"}, {"y": 128, "x": 18, "shape": "cross", "size": "10"}, {"y": 306, "x": 18, "shape": "cross", "size": "10"}, {"y": 288, "x": 28, "shape": "cross", "size": "10"}, {"y": 76, "x": 22, "shape": "cross", "size": "10"}, {"y": 400, "x": 27, "shape": "cross", "size": "10"}, {"y": 168, "x": 29, "shape": "cross", "size": "10"}, {"y": 440, "x": 25, "shape": "cross", "size": "10"}, {"y": 276, "x": 32, "shape": "cross", "size": "10"}, {"y": 432, "x": 30, "shape": "cross", "size": "10"}, {"y": 500, "x": 31, "shape": "cross", "size": "10"}, {"y": 208, "x": 33, "shape": "cross", "size": "10"}, {"y": 270, "x": 31, "shape": "cross", "size": "10"}, {"y": 56, "x": 34, "shape": "cross", "size": "10"}, {"y": 464, "x": 32, "shape": "cross", "size": "10"}, {"y": 120, "x": 33, "shape": "cross", "size": "10"}, {"y": 310, "x": 40, "shape": "cross", "size": "10"}, {"y": 448, "x": 35, "shape": "cross", "size": "10"}, {"y": 330, "x": 43, "shape": "cross", "size": "10"}, {"y": 204, "x": 40, "shape": "cross", "size": "10"}, {"y": 420, "x": 40, "shape": "cross", "size": "10"}, {"y": 288, "x": 40, "shape": "cross", "size": "10"}, {"y": 148, "x": 40, "shape": "cross", "size": "10"}, {"y": 760, "x": 45, "shape": "cross", "size": "10"}, {"y": 78, "x": 48, "shape": "cross", "size": "10"}, {"y": 560, "x": 50, "shape": "cross", "size": "10"}, {"y": 328, "x": 45, "shape": "cross", "size": "10"}, {"y": 252, "x": 46, "shape": "cross", "size": "10"}, {"y": 344, "x": 49, "shape": "cross", "size": "10"}, {"y": 616, "x": 49, "shape": "cross", "size": "10"}, {"y": 810, "x": 55, "shape": "cross", "size": "10"}, {"y": 276, "x": 50, "shape": "cross", "size": "10"}, {"y": 846, "x": 55, "shape": "cross", "size": "10"}, {"y": 672, "x": 53, "shape": "cross", "size": "10"}, {"y": 294, "x": 52, "shape": "cross", "size": "10"}], "key": "serie 2", "yAxis": "1"}, {"values": [{"y": 0, "x": 1, "shape": "triangle-up", "size": "100"}, {"y": 20, "x": 10, "shape": "triangle-up", "size": "100"}, {"y": 100, "x": 6, "shape": "triangle-up", "size": "100"}, {"y": 75, "x": 12, "shape": "triangle-up", "size": "100"}, {"y": 200, "x": 13, "shape": "triangle-up", "size": "100"}, {"y": 50, "x": 13, "shape": "triangle-up", "size": "100"}, {"y": 300, "x": 10, "shape": "triangle-up", "size": "100"}, {"y": 350, "x": 9, "shape": "triangle-up", "size": "100"}, {"y": 80, "x": 14, "shape": "triangle-up", "size": "100"}, {"y": 135, "x": 19, "shape": "triangle-up", "size": "100"}, {"y": 500, "x": 17, "shape": "triangle-up", "size": "100"}, {"y": 165, "x": 21, "shape": "triangle-up", "size": "100"}, {"y": 60, "x": 21, "shape": "triangle-up", "size": "100"}, {"y": 520, "x": 17, "shape": "triangle-up", "size": "100"}, {"y": 210, "x": 15, "shape": "triangle-up", "size": "100"}, {"y": 450, "x": 24, "shape": "triangle-up", "size": "100"}, {"y": 320, "x": 18, "shape": "triangle-up", "size": "100"}, {"y": 765, "x": 18, "shape": "triangle-up", "size": "100"}, {"y": 720, "x": 28, "shape": "triangle-up", "size": "100"}, {"y": 190, "x": 22, "shape": "triangle-up", "size": "100"}, {"y": 1000, "x": 27, "shape": "triangle-up", "size": "100"}, {"y": 420, "x": 29, "shape": "triangle-up", "size": "100"}, {"y": 1100, "x": 25, "shape": "triangle-up", "size": "100"}, {"y": 690, "x": 32, "shape": "triangle-up", "size": "100"}, {"y": 1080, "x": 30, "shape": "triangle-up", "size": "100"}, {"y": 1250, "x": 31, "shape": "triangle-up", "size": "100"}, {"y": 520, "x": 33, "shape": "triangle-up", "size": "100"}, {"y": 675, "x": 31, "shape": "triangle-up", "size": "100"}, {"y": 140, "x": 34, "shape": "triangle-up", "size": "100"}, {"y": 1160, "x": 32, "shape": "triangle-up", "size": "100"}, {"y": 300, "x": 33, "shape": "triangle-up", "size": "100"}, {"y": 775, "x": 40, "shape": "triangle-up", "size": "100"}, {"y": 1120, "x": 35, "shape": "triangle-up", "size": "100"}, {"y": 825, "x": 43, "shape": "triangle-up", "size": "100"}, {"y": 510, "x": 40, "shape": "triangle-up", "size": "100"}, {"y": 1050, "x": 40, "shape": "triangle-up", "size": "100"}, {"y": 720, "x": 40, "shape": "triangle-up", "size": "100"}, {"y": 370, "x": 40, "shape": "triangle-up", "size": "100"}, {"y": 1900, "x": 45, "shape": "triangle-up", "size": "100"}, {"y": 195, "x": 48, "shape": "triangle-up", "size": "100"}, {"y": 1400, "x": 50, "shape": "triangle-up", "size": "100"}, {"y": 820, "x": 45, "shape": "triangle-up", "size": "100"}, {"y": 630, "x": 46, "shape": "triangle-up", "size": "100"}, {"y": 860, "x": 49, "shape": "triangle-up", "size": "100"}, {"y": 1540, "x": 49, "shape": "triangle-up", "size": "100"}, {"y": 2025, "x": 55, "shape": "triangle-up", "size": "100"}, {"y": 690, "x": 50, "shape": "triangle-up", "size": "100"}, {"y": 2115, "x": 55, "shape": "triangle-up", "size": "100"}, {"y": 1680, "x": 53, "shape": "triangle-up", "size": "100"}, {"y": 735, "x": 52, "shape": "triangle-up", "size": "100"}], "key": "serie 3", "yAxis": "1"}];
+</script>
+
+</body>

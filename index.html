@@ -1,0 +1,283 @@
+<!doctype>
+<head>
+  <link rel="stylesheet" href="/Users/bull/anaconda/lib/python2.7/site-packages/bearcart/rickshaw.min.css">
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+	<script src="/Users/bull/anaconda/lib/python2.7/site-packages/bearcart/rickshaw.min.js"></script>
+
+<style>
+body {
+  font: 10px sans-serif;
+}
+#chart {
+    float: left;
+    margin-top: 70px;
+          }
+#y_axis {
+   float: left;
+   margin-top: 70px;
+          }
+#legend {
+        float: left;
+        margin-left: 15px;
+        margin-top: 70px;
+}
+</style>
+</head>
+<body>
+
+        <div id="y_axis"></div>
+        <div id="chart"></div>
+        <div id="legend"></div>
+
+
+<script>
+
+var palette = new Rickshaw.Color.Palette( {scheme: 'spectrum14'} );
+
+d3.json('data.json', function(error, json) {
+
+var graph = new Rickshaw.Graph( {
+                element: document.querySelector("#chart"),
+                min: 'auto',
+                width: 750,
+                height: 400,
+                renderer: 'line',
+                series: [
+                         {name: 'caseId',
+                          color: palette.color(),
+                          data: json[0].data},
+                          
+                         {name: 'docketId',
+                          color: palette.color(),
+                          data: json[1].data},
+                          
+                         {name: 'caseIssuesId',
+                          color: palette.color(),
+                          data: json[2].data},
+                          
+                         {name: 'voteId',
+                          color: palette.color(),
+                          data: json[3].data},
+                          
+                         {name: 'dateDecision',
+                          color: palette.color(),
+                          data: json[4].data},
+                          
+                         {name: 'usCite',
+                          color: palette.color(),
+                          data: json[5].data},
+                          
+                         {name: 'sctCite',
+                          color: palette.color(),
+                          data: json[6].data},
+                          
+                         {name: 'ledCite',
+                          color: palette.color(),
+                          data: json[7].data},
+                          
+                         {name: 'lexisCite',
+                          color: palette.color(),
+                          data: json[8].data},
+                          
+                         {name: 'term',
+                          color: palette.color(),
+                          data: json[9].data},
+                          
+                         {name: 'chief',
+                          color: palette.color(),
+                          data: json[10].data},
+                          
+                         {name: 'caseName',
+                          color: palette.color(),
+                          data: json[11].data},
+                          
+                         {name: 'petitioner',
+                          color: palette.color(),
+                          data: json[12].data},
+                          
+                         {name: 'petitionerState',
+                          color: palette.color(),
+                          data: json[13].data},
+                          
+                         {name: 'respondent',
+                          color: palette.color(),
+                          data: json[14].data},
+                          
+                         {name: 'respondentState',
+                          color: palette.color(),
+                          data: json[15].data},
+                          
+                         {name: 'jurisdiction',
+                          color: palette.color(),
+                          data: json[16].data},
+                          
+                         {name: 'adminAction',
+                          color: palette.color(),
+                          data: json[17].data},
+                          
+                         {name: 'adminActionState',
+                          color: palette.color(),
+                          data: json[18].data},
+                          
+                         {name: 'threeJudgeFdc',
+                          color: palette.color(),
+                          data: json[19].data},
+                          
+                         {name: 'caseOrigin',
+                          color: palette.color(),
+                          data: json[20].data},
+                          
+                         {name: 'caseOriginState',
+                          color: palette.color(),
+                          data: json[21].data},
+                          
+                         {name: 'caseSource',
+                          color: palette.color(),
+                          data: json[22].data},
+                          
+                         {name: 'caseSourceState',
+                          color: palette.color(),
+                          data: json[23].data},
+                          
+                         {name: 'lcDisagreement',
+                          color: palette.color(),
+                          data: json[24].data},
+                          
+                         {name: 'certReason',
+                          color: palette.color(),
+                          data: json[25].data},
+                          
+                         {name: 'lcDisposition',
+                          color: palette.color(),
+                          data: json[26].data},
+                          
+                         {name: 'lcDispositionDirection',
+                          color: palette.color(),
+                          data: json[27].data},
+                          
+                         {name: 'declarationUncon',
+                          color: palette.color(),
+                          data: json[28].data},
+                          
+                         {name: 'caseDisposition',
+                          color: palette.color(),
+                          data: json[29].data},
+                          
+                         {name: 'partyWinning',
+                          color: palette.color(),
+                          data: json[30].data},
+                          
+                         {name: 'precedentAlteration',
+                          color: palette.color(),
+                          data: json[31].data},
+                          
+                         {name: 'issueArea',
+                          color: palette.color(),
+                          data: json[32].data},
+                          
+                         {name: 'decisionDirection',
+                          color: palette.color(),
+                          data: json[33].data},
+                          
+                         {name: 'decisionDirectionDissent',
+                          color: palette.color(),
+                          data: json[34].data},
+                          
+                         {name: 'authorityDecision1',
+                          color: palette.color(),
+                          data: json[35].data},
+                          
+                         {name: 'authorityDecision2',
+                          color: palette.color(),
+                          data: json[36].data},
+                          
+                         {name: 'lawType',
+                          color: palette.color(),
+                          data: json[37].data},
+                          
+                         {name: 'majOpinWriter',
+                          color: palette.color(),
+                          data: json[38].data},
+                          
+                         {name: 'splitVote',
+                          color: palette.color(),
+                          data: json[39].data},
+                          
+                         {name: 'majVotes',
+                          color: palette.color(),
+                          data: json[40].data},
+                          
+                         {name: 'minVotes',
+                          color: palette.color(),
+                          data: json[41].data},
+                          
+                         {name: 'justice',
+                          color: palette.color(),
+                          data: json[42].data},
+                          
+                         {name: 'justiceName',
+                          color: palette.color(),
+                          data: json[43].data},
+                          
+                         {name: 'vote',
+                          color: palette.color(),
+                          data: json[44].data},
+                          
+                         {name: 'opinion',
+                          color: palette.color(),
+                          data: json[45].data},
+                          
+                         {name: 'direction',
+                          color: palette.color(),
+                          data: json[46].data},
+                          
+                         {name: 'majority',
+                          color: palette.color(),
+                          data: json[47].data},
+                          
+                         {name: 'firstAgreement',
+                          color: palette.color(),
+                          data: json[48].data},
+                          
+                         {name: 'secondAgreement',
+                          color: palette.color(),
+                          data: json[49].data}
+                          ]
+                })
+
+var x_axis = new Rickshaw.Graph.Axis.Time( { graph: graph } );
+
+
+
+var y_axis = new Rickshaw.Graph.Axis.Y( {
+        graph: graph,
+        orientation: 'left',
+        tickFormat: Rickshaw.Fixtures.Number.formatKMBT,
+        element: document.getElementById('y_axis')
+} );
+
+var hoverDetail = new Rickshaw.Graph.HoverDetail( {
+    graph: graph,
+    
+} );
+
+var legend = new Rickshaw.Graph.Legend( {
+    graph: graph,
+    element: document.getElementById('legend')
+
+} );
+
+var shelving = new Rickshaw.Graph.Behavior.Series.Toggle({
+    graph: graph,
+    legend: legend
+});
+
+graph.render();
+
+});
+
+
+</script>
+
+</body>

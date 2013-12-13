@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?><gexf version="1.1" xmlns="http://www.gexf.net/1.1draft" xmlns:viz="http://www.gexf.net/1.1draft/viz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/2001/XMLSchema-instance">
+  <graph defaultedgetype="undirected" mode="static">
+    <nodes>
+      <node id="JWilson" label="JWilson" />
+      <node id="DJBrewer" label="DJBrewer" />
+      <node id="PButler" label="PButler" />
+      <node id="JRLamar" label="JRLamar" />
+      <node id="SPChase" label="SPChase" />
+      <node id="OEllsworth" label="OEllsworth" />
+      <node id="LQLamar" label="LQLamar" />
+      <node id="JBlair" label="JBlair" />
+      <node id="RCGrier" label="RCGrier" />
+      <node id="HABlackmun" label="HABlackmun" />
+      <node id="RWPeckham" label="RWPeckham" />
+      <node id="SFReed" label="SFReed" />
+      <node id="HBBrown" label="HBBrown" />
+      <node id="FFrankfurter" label="FFrankfurter" />
+      <node id="GShiras" label="GShiras" />
+      <node id="WVanDevanter" label="WVanDevanter" />
+      <node id="SAAlito" label="SAAlito" />
+      <node id="JMcKinley" label="JMcKinley" />
+      <node id="EDEWhite" label="EDEWhite" />
+      <node id="CEWhittaker" label="CEWhittaker" />
+      <node id="OWHolmes" label="OWHolmes" />
+      <node id="WHMoody" label="WHMoody" />
+      <node id="OJRoberts" label="OJRoberts" />
+      <node id="JMcKenna" label="JMcKenna" />
+      <node id="WStrong" label="WStrong" />
+      <node id="LWoodbury" label="LWoodbury" />
+      <node id="WBWoods" label="WBWoods" />
+      <node id="AFortas" label="AFortas" />
+      <node id="SMatthews" label="SMatthews" />
+      <node id="JCMcReynolds" label="JCMcReynolds" />
+      <node id="WCushing" label="WCushing" />
+      <node id="BRWhite" label="BRWhite" />
+      <node id="WPaterson" label="WPaterson" />
+      <node id="AScalia" label="AScalia" />
+      <node id="EKagan" label="EKagan" />
+      <node id="LFPowell" label="LFPowell" />
+      <node id="HGray" label="HGray" />
+      <node id="AMKennedy" label="AMKennedy" />
+      <node id="BWashington" label="BWashington" />
+      <node id="FMurphy" label="FMurphy" />
+      <node id="WRDay" label="WRDay" />
+      <node id="RHJackson" label="RHJackson" />
+      <node id="SChase" label="SChase" />
+      <node id="BRCurtis" label="BRCurtis" />
+      <node id="TJohnson" label="TJohnson" />
+      <node id="CThomas" label="CThomas" />
+      <node id="HHLurton" label="HHLurton" />
+      <node id="JStory" label="JStory" />
+      <node id="HFStone" label="HFStone" />
+      <node id="SSotomayor" label="SSotomayor" />
+      <node id="TCClark" label="TCClark" />
+      <node id="RBTaney" label="RBTaney" />
+      <node id="WBRutledge" label="WBRutledge" />
+      <node id="PPBarbour" label="PPBarbour" />
+      <node id="RTrimble" label="RTrimble" />
+      <node id="PStewart" label="PStewart" />
+      <node id="JACampbell" label="JACampbell" />
+      <node id="SThompson" label="SThompson" />
+      <node id="WJohnson" label="WJohnson" />
+      <node id="MRWaite" label="MRWaite" />
+      <node id="SNelson" label="SNelson" />
+      <node id="HBLivingston" label="HBLivingston" />
+      <node id="SDOConnor" label="SDOConnor" />
+      <node id="JPStevens" label="JPStevens" />
+      <node id="HBaldwin" label="HBaldwin" />
+      <node id="JMarshall" label="JMarshall" />
+      <node id="HEJackson" label="HEJackson" />
+      <node id="SFMiller" label="SFMiller" />
+      <node id="JCatron" label="JCatron" />
+      <node id="AMoore" label="AMoore" />
+      <node id="BNCardozo" label="BNCardozo" />
+      <node id="TMarshall" label="TMarshall" />
+      <node id="JMWayne" label="JMWayne" />
+      <node id="JMcLean" label="JMcLean" />
+      <node id="FMVinson" label="FMVinson" />
+      <node id="SJField" label="SJField" />
+      <node id="MWFuller" label="MWFuller" />
+      <node id="JIredell" label="JIredell" />
+      <node id="TTodd" label="TTodd" />
+      <node id="AJGoldberg" label="AJGoldberg" />
+      <node id="GDuvall" label="GDuvall" />
+      <node id="WHRehnquist" label="WHRehnquist" />
+      <node id="NClifford" label="NClifford" />
+      <node id="WHTaft" label="WHTaft" />
+      <node id="SGBreyer" label="SGBreyer" />
+      <node id="JJay" label="JJay" />
+      <node id="HHBurton" label="HHBurton" />
+      <node id="DHSouter" label="DHSouter" />
+      <node id="CEHughes1" label="CEHughes1" />
+      <node id="HLBlack" label="HLBlack" />
+      <node id="CEHughes2" label="CEHughes2" />
+      <node id="JHClarke" label="JHClarke" />
+      <node id="PVDaniel" label="PVDaniel" />
+      <node id="WJBrennan" label="WJBrennan" />
+      <node id="JHarlan1" label="JHarlan1" />
+      <node id="JHarlan2" label="JHarlan2" />
+      <node id="JPBradley" label="JPBradley" />
+      <node id="JGRoberts" label="JGRoberts" />
+      <node id="WODouglas" label="WODouglas" />
+      <node id="MPitney" label="MPitney" />
+      <node id="NHSwayne" label="NHSwayne" />
+      <node id="JFByrnes" label="JFByrnes" />
+      <node id="JRutledge" label="JRutledge" />
+      <node id="DDavis" label="DDavis" />
+      <node id="RBGinsburg" label="RBGinsburg" />
+      <node id="SMinton" label="SMinton" />
+      <node id="ETSanford" label="ETSanford" />
+      <node id="LDBrandeis" label="LDBrandeis" />
+      <node id="EWarren" label="EWarren" />
+      <node id="GSutherland" label="GSutherland" />
+      <node id="WHunt" label="WHunt" />
+      <node id="SBlatchford" label="SBlatchford" />
+      <node id="WEBurger" label="WEBurger" />
+    </nodes>
+    <edges>
+      <edge id="0" source="HABlackmun" target="PStewart" weight="1321" />
+      <edge id="1" source="HABlackmun" target="SDOConnor" weight="1281" />
+      <edge id="2" source="HABlackmun" target="WODouglas" weight="417" />
+      <edge id="3" source="HABlackmun" target="JPStevens" weight="2000" />
+      <edge id="4" source="HABlackmun" target="BRWhite" weight="2734" />
+      <edge id="5" source="HABlackmun" target="TMarshall" weight="2346" />
+      <edge id="6" source="HABlackmun" target="AScalia" weight="639" />
+      <edge id="7" source="HABlackmun" target="DHSouter" weight="323" />
+      <edge id="8" source="HABlackmun" target="WHRehnquist" weight="2362" />
+      <edge id="9" source="HABlackmun" target="RBGinsburg" weight="67" />
+      <edge id="10" source="HABlackmun" target="HLBlack" weight="105" />
+      <edge id="11" source="HABlackmun" target="WJBrennan" weight="2276" />
+      <edge id="12" source="HABlackmun" target="CThomas" weight="178" />
+      <edge id="13" source="HABlackmun" target="AMKennedy" weight="543" />
+      <edge id="14" source="HABlackmun" target="LFPowell" weight="1877" />
+      <edge id="15" source="HABlackmun" target="JHarlan2" weight="115" />
+      <edge id="16" source="HABlackmun" target="WEBurger" weight="2105" />
+      <edge id="17" source="SFReed" target="WODouglas" weight="615" />
+      <edge id="18" source="SFReed" target="HHBurton" weight="900" />
+      <edge id="19" source="SFReed" target="FFrankfurter" weight="731" />
+      <edge id="20" source="SFReed" target="SMinton" weight="551" />
+      <edge id="21" source="SFReed" target="WBRutledge" weight="246" />
+      <edge id="22" source="SFReed" target="TCClark" weight="547" />
+      <edge id="23" source="SFReed" target="WJBrennan" weight="27" />
+      <edge id="24" source="SFReed" target="HLBlack" weight="663" />
+      <edge id="25" source="SFReed" target="EWarren" weight="225" />
+      <edge id="26" source="SFReed" target="FMurphy" weight="231" />
+      <edge id="27" source="SFReed" target="RHJackson" weight="601" />
+      <edge id="28" source="SFReed" target="FMVinson" weight="642" />
+      <edge id="29" source="SFReed" target="JHarlan2" weight="101" />
+      <edge id="30" source="FFrankfurter" target="PStewart" weight="337" />
+      <edge id="31" source="FFrankfurter" target="WODouglas" weight="935" />
+      <edge id="32" source="FFrankfurter" target="BRWhite" weight="0" />
+      <edge id="33" source="FFrankfurter" target="HHBurton" weight="964" />
+      <edge id="34" source="FFrankfurter" target="SMinton" weight="449" />
+      <edge id="35" source="FFrankfurter" target="CEWhittaker" weight="487" />
+      <edge id="36" source="FFrankfurter" target="WBRutledge" weight="222" />
+      <edge id="37" source="FFrankfurter" target="TCClark" weight="960" />
+      <edge id="38" source="FFrankfurter" target="WJBrennan" weight="482" />
+      <edge id="39" source="FFrankfurter" target="HLBlack" weight="1058" />
+      <edge id="40" source="FFrankfurter" target="EWarren" weight="625" />
+      <edge id="41" source="FFrankfurter" target="FMurphy" weight="231" />
+      <edge id="42" source="FFrankfurter" target="RHJackson" weight="644" />
+      <edge id="43" source="FFrankfurter" target="FMVinson" weight="531" />
+      <edge id="44" source="FFrankfurter" target="JHarlan2" weight="692" />
+      <edge id="45" source="SAAlito" target="JGRoberts" weight="536" />
+      <edge id="46" source="SAAlito" target="JPStevens" weight="205" />
+      <edge id="47" source="SAAlito" target="CThomas" weight="513" />
+      <edge id="48" source="SAAlito" target="AScalia" weight="505" />
+      <edge id="49" source="SAAlito" target="EKagan" weight="128" />
+      <edge id="50" source="SAAlito" target="DHSouter" weight="164" />
+      <edge id="51" source="SAAlito" target="SGBreyer" weight="391" />
+      <edge id="52" source="SAAlito" target="SSotomayor" weight="201" />
+      <edge id="53" source="SAAlito" target="RBGinsburg" weight="368" />
+      <edge id="54" source="SAAlito" target="AMKennedy" weight="503" />
+      <edge id="55" source="CEWhittaker" target="PStewart" weight="350" />
+      <edge id="56" source="CEWhittaker" target="WODouglas" weight="334" />
+      <edge id="57" source="CEWhittaker" target="HHBurton" weight="161" />
+      <edge id="58" source="CEWhittaker" target="HLBlack" weight="364" />
+      <edge id="59" source="CEWhittaker" target="EWarren" weight="387" />
+      <edge id="60" source="CEWhittaker" target="WJBrennan" weight="423" />
+      <edge id="61" source="CEWhittaker" target="TCClark" weight="484" />
+      <edge id="62" source="CEWhittaker" target="JHarlan2" weight="516" />
+      <edge id="63" source="AFortas" target="PStewart" weight="385" />
+      <edge id="64" source="AFortas" target="WODouglas" weight="432" />
+      <edge id="65" source="AFortas" target="BRWhite" weight="391" />
+      <edge id="66" source="AFortas" target="TMarshall" weight="172" />
+      <edge id="67" source="AFortas" target="HLBlack" weight="374" />
+      <edge id="68" source="AFortas" target="EWarren" weight="460" />
+      <edge id="69" source="AFortas" target="WJBrennan" weight="470" />
+      <edge id="70" source="AFortas" target="TCClark" weight="184" />
+      <edge id="71" source="AFortas" target="JHarlan2" weight="321" />
+      <edge id="72" source="BRWhite" target="PStewart" weight="2281" />
+      <edge id="73" source="BRWhite" target="WODouglas" weight="1277" />
+      <edge id="74" source="BRWhite" target="JPStevens" weight="1808" />
+      <edge id="75" source="BRWhite" target="CThomas" weight="166" />
+      <edge id="76" source="BRWhite" target="AJGoldberg" weight="341" />
+      <edge id="77" source="BRWhite" target="AScalia" weight="762" />
+      <edge id="78" source="BRWhite" target="TMarshall" weight="2440" />
+      <edge id="79" source="BRWhite" target="DHSouter" weight="285" />
+      <edge id="80" source="BRWhite" target="WHRehnquist" weight="2628" />
+      <edge id="81" source="BRWhite" target="LFPowell" weight="1946" />
+      <edge id="82" source="BRWhite" target="SDOConnor" weight="1412" />
+      <edge id="83" source="BRWhite" target="HLBlack" weight="997" />
+      <edge id="84" source="BRWhite" target="EWarren" weight="843" />
+      <edge id="85" source="BRWhite" target="WJBrennan" weight="3149" />
+      <edge id="86" source="BRWhite" target="AMKennedy" weight="590" />
+      <edge id="87" source="BRWhite" target="TCClark" weight="605" />
+      <edge id="88" source="BRWhite" target="JHarlan2" weight="964" />
+      <edge id="89" source="BRWhite" target="WEBurger" weight="2240" />
+      <edge id="90" source="AScalia" target="SDOConnor" weight="1645" />
+      <edge id="91" source="AScalia" target="JGRoberts" weight="563" />
+      <edge id="92" source="AScalia" target="JPStevens" weight="1393" />
+      <edge id="93" source="AScalia" target="TMarshall" weight="380" />
+      <edge id="94" source="AScalia" target="SGBreyer" weight="1009" />
+      <edge id="95" source="AScalia" target="SSotomayor" weight="210" />
+      <edge id="96" source="AScalia" target="EKagan" weight="137" />
+      <edge id="97" source="AScalia" target="DHSouter" weight="1188" />
+      <edge id="98" source="AScalia" target="WHRehnquist" weight="1735" />
+      <edge id="99" source="AScalia" target="RBGinsburg" weight="1098" />
+      <edge id="100" source="AScalia" target="WJBrennan" weight="325" />
+      <edge id="101" source="AScalia" target="CThomas" weight="1755" />
+      <edge id="102" source="AScalia" target="LFPowell" weight="121" />
+      <edge id="103" source="AScalia" target="AMKennedy" weight="2015" />
+      <edge id="104" source="EKagan" target="JGRoberts" weight="138" />
+      <edge id="105" source="EKagan" target="CThomas" weight="130" />
+      <edge id="106" source="EKagan" target="RBGinsburg" weight="186" />
+      <edge id="107" source="EKagan" target="SSotomayor" weight="184" />
+      <edge id="108" source="EKagan" target="SGBreyer" weight="177" />
+      <edge id="109" source="EKagan" target="AMKennedy" weight="150" />
+      <edge id="110" source="LFPowell" target="PStewart" weight="1219" />
+      <edge id="111" source="LFPowell" target="SDOConnor" weight="781" />
+      <edge id="112" source="LFPowell" target="WODouglas" weight="294" />
+      <edge id="113" source="LFPowell" target="JPStevens" weight="1204" />
+      <edge id="114" source="LFPowell" target="TMarshall" weight="1488" />
+      <edge id="115" source="LFPowell" target="WHRehnquist" weight="1960" />
+      <edge id="116" source="LFPowell" target="WJBrennan" weight="1508" />
+      <edge id="117" source="LFPowell" target="WEBurger" weight="1962" />
+      <edge id="118" source="AMKennedy" target="SDOConnor" weight="1520" />
+      <edge id="119" source="AMKennedy" target="JGRoberts" weight="544" />
+      <edge id="120" source="AMKennedy" target="JPStevens" weight="1431" />
+      <edge id="121" source="AMKennedy" target="SSotomayor" weight="238" />
+      <edge id="122" source="AMKennedy" target="TMarshall" weight="265" />
+      <edge id="123" source="AMKennedy" target="DHSouter" weight="1320" />
+      <edge id="124" source="AMKennedy" target="WHRehnquist" weight="1543" />
+      <edge id="125" source="AMKennedy" target="SGBreyer" weight="1188" />
+      <edge id="126" source="AMKennedy" target="WJBrennan" weight="206" />
+      <edge id="127" source="AMKennedy" target="CThomas" weight="1546" />
+      <edge id="128" source="AMKennedy" target="RBGinsburg" weight="1250" />
+      <edge id="129" source="FMurphy" target="WODouglas" weight="285" />
+      <edge id="130" source="FMurphy" target="HHBurton" weight="221" />
+      <edge id="131" source="FMurphy" target="WBRutledge" weight="319" />
+      <edge id="132" source="FMurphy" target="HLBlack" weight="315" />
+      <edge id="133" source="FMurphy" target="RHJackson" weight="209" />
+      <edge id="134" source="FMurphy" target="FMVinson" weight="239" />
+      <edge id="135" source="RHJackson" target="WODouglas" weight="398" />
+      <edge id="136" source="RHJackson" target="HHBurton" weight="607" />
+      <edge id="137" source="RHJackson" target="SMinton" weight="322" />
+      <edge id="138" source="RHJackson" target="WBRutledge" weight="205" />
+      <edge id="139" source="RHJackson" target="TCClark" weight="323" />
+      <edge id="140" source="RHJackson" target="HLBlack" weight="463" />
+      <edge id="141" source="RHJackson" target="EWarren" weight="54" />
+      <edge id="142" source="RHJackson" target="FMVinson" weight="550" />
+      <edge id="143" source="CThomas" target="SDOConnor" weight="1036" />
+      <edge id="144" source="CThomas" target="JGRoberts" weight="546" />
+      <edge id="145" source="CThomas" target="JPStevens" weight="922" />
+      <edge id="146" source="CThomas" target="SSotomayor" weight="205" />
+      <edge id="147" source="CThomas" target="DHSouter" weight="1045" />
+      <edge id="148" source="CThomas" target="WHRehnquist" weight="1094" />
+      <edge id="149" source="CThomas" target="SGBreyer" weight="992" />
+      <edge id="150" source="CThomas" target="RBGinsburg" weight="1058" />
+      <edge id="151" source="SSotomayor" target="JGRoberts" weight="222" />
+      <edge id="152" source="SSotomayor" target="JPStevens" weight="71" />
+      <edge id="153" source="SSotomayor" target="RBGinsburg" weight="282" />
+      <edge id="154" source="SSotomayor" target="SGBreyer" weight="273" />
+      <edge id="155" source="TCClark" target="PStewart" weight="945" />
+      <edge id="156" source="TCClark" target="WODouglas" weight="1310" />
+      <edge id="157" source="TCClark" target="HHBurton" weight="735" />
+      <edge id="158" source="TCClark" target="SMinton" weight="513" />
+      <edge id="159" source="TCClark" target="AJGoldberg" weight="322" />
+      <edge id="160" source="TCClark" target="FMVinson" weight="315" />
+      <edge id="161" source="TCClark" target="HLBlack" weight="1466" />
+      <edge id="162" source="TCClark" target="EWarren" weight="1374" />
+      <edge id="163" source="TCClark" target="WJBrennan" weight="1169" />
+      <edge id="164" source="TCClark" target="JHarlan2" weight="1196" />
+      <edge id="165" source="WBRutledge" target="WODouglas" weight="286" />
+      <edge id="166" source="WBRutledge" target="HHBurton" weight="235" />
+      <edge id="167" source="WBRutledge" target="FMVinson" weight="234" />
+      <edge id="168" source="WBRutledge" target="HLBlack" weight="317" />
+      <edge id="169" source="PStewart" target="WODouglas" weight="1572" />
+      <edge id="170" source="PStewart" target="JPStevens" weight="632" />
+      <edge id="171" source="PStewart" target="AJGoldberg" weight="346" />
+      <edge id="172" source="PStewart" target="TMarshall" weight="1489" />
+      <edge id="173" source="PStewart" target="WHRehnquist" weight="1148" />
+      <edge id="174" source="PStewart" target="HLBlack" weight="1237" />
+      <edge id="175" source="PStewart" target="EWarren" weight="1114" />
+      <edge id="176" source="PStewart" target="WJBrennan" weight="2495" />
+      <edge id="177" source="PStewart" target="JHarlan2" weight="1423" />
+      <edge id="178" source="PStewart" target="WEBurger" weight="1490" />
+      <edge id="179" source="SDOConnor" target="JGRoberts" weight="22" />
+      <edge id="180" source="SDOConnor" target="JPStevens" weight="1865" />
+      <edge id="181" source="SDOConnor" target="TMarshall" weight="832" />
+      <edge id="182" source="SDOConnor" target="SGBreyer" weight="767" />
+      <edge id="183" source="SDOConnor" target="DHSouter" weight="1117" />
+      <edge id="184" source="SDOConnor" target="WHRehnquist" weight="2414" />
+      <edge id="185" source="SDOConnor" target="RBGinsburg" weight="801" />
+      <edge id="186" source="SDOConnor" target="WJBrennan" weight="812" />
+      <edge id="187" source="SDOConnor" target="WEBurger" weight="723" />
+      <edge id="188" source="JPStevens" target="TMarshall" weight="1712" />
+      <edge id="189" source="JPStevens" target="SGBreyer" weight="1091" />
+      <edge id="190" source="JPStevens" target="DHSouter" weight="1361" />
+      <edge id="191" source="JPStevens" target="WHRehnquist" weight="2244" />
+      <edge id="192" source="JPStevens" target="RBGinsburg" weight="1211" />
+      <edge id="193" source="JPStevens" target="JGRoberts" weight="246" />
+      <edge id="194" source="JPStevens" target="WJBrennan" weight="1668" />
+      <edge id="195" source="JPStevens" target="WEBurger" weight="1130" />
+      <edge id="196" source="TMarshall" target="WODouglas" weight="900" />
+      <edge id="197" source="TMarshall" target="DHSouter" weight="67" />
+      <edge id="198" source="TMarshall" target="WHRehnquist" weight="1522" />
+      <edge id="199" source="TMarshall" target="HLBlack" weight="332" />
+      <edge id="200" source="TMarshall" target="EWarren" weight="225" />
+      <edge id="201" source="TMarshall" target="WJBrennan" weight="3184" />
+      <edge id="202" source="TMarshall" target="JHarlan2" weight="337" />
+      <edge id="203" source="TMarshall" target="WEBurger" weight="1568" />
+      <edge id="204" source="FMVinson" target="WODouglas" weight="410" />
+      <edge id="205" source="FMVinson" target="HHBurton" weight="640" />
+      <edge id="206" source="FMVinson" target="SMinton" weight="324" />
+      <edge id="207" source="FMVinson" target="HLBlack" weight="485" />
+      <edge id="208" source="AJGoldberg" target="WODouglas" weight="361" />
+      <edge id="209" source="AJGoldberg" target="HLBlack" weight="359" />
+      <edge id="210" source="AJGoldberg" target="EWarren" weight="392" />
+      <edge id="211" source="AJGoldberg" target="WJBrennan" weight="405" />
+      <edge id="212" source="AJGoldberg" target="JHarlan2" weight="263" />
+      <edge id="213" source="WHRehnquist" target="WODouglas" weight="246" />
+      <edge id="214" source="WHRehnquist" target="SGBreyer" weight="666" />
+      <edge id="215" source="WHRehnquist" target="DHSouter" weight="1018" />
+      <edge id="216" source="WHRehnquist" target="RBGinsburg" weight="734" />
+      <edge id="217" source="WHRehnquist" target="WJBrennan" weight="1504" />
+      <edge id="218" source="WHRehnquist" target="WEBurger" weight="2069" />
+      <edge id="219" source="SGBreyer" target="JGRoberts" weight="440" />
+      <edge id="220" source="SGBreyer" target="DHSouter" weight="1078" />
+      <edge id="221" source="SGBreyer" target="RBGinsburg" weight="1369" />
+      <edge id="222" source="HHBurton" target="WODouglas" weight="716" />
+      <edge id="223" source="HHBurton" target="SMinton" weight="544" />
+      <edge id="224" source="HHBurton" target="WJBrennan" weight="178" />
+      <edge id="225" source="HHBurton" target="HLBlack" weight="801" />
+      <edge id="226" source="HHBurton" target="EWarren" weight="366" />
+      <edge id="227" source="HHBurton" target="JHarlan2" weight="296" />
+      <edge id="228" source="DHSouter" target="JGRoberts" weight="205" />
+      <edge id="229" source="DHSouter" target="RBGinsburg" weight="1218" />
+      <edge id="230" source="HLBlack" target="WODouglas" weight="2421" />
+      <edge id="231" source="HLBlack" target="SMinton" weight="411" />
+      <edge id="232" source="HLBlack" target="WJBrennan" weight="1652" />
+      <edge id="233" source="HLBlack" target="EWarren" weight="1733" />
+      <edge id="234" source="HLBlack" target="JHarlan2" weight="1289" />
+      <edge id="235" source="HLBlack" target="WEBurger" weight="189" />
+      <edge id="236" source="WJBrennan" target="JHarlan2" weight="1384" />
+      <edge id="237" source="WJBrennan" target="WODouglas" weight="2228" />
+      <edge id="238" source="WJBrennan" target="EWarren" weight="1691" />
+      <edge id="239" source="WJBrennan" target="WEBurger" weight="1597" />
+      <edge id="240" source="JHarlan2" target="WODouglas" weight="1155" />
+      <edge id="241" source="JHarlan2" target="SMinton" weight="78" />
+      <edge id="242" source="JHarlan2" target="EWarren" weight="1162" />
+      <edge id="243" source="JHarlan2" target="WEBurger" weight="218" />
+      <edge id="244" source="JGRoberts" target="RBGinsburg" weight="417" />
+      <edge id="245" source="WODouglas" target="SMinton" weight="342" />
+      <edge id="246" source="WODouglas" target="EWarren" weight="1724" />
+      <edge id="247" source="WODouglas" target="WEBurger" weight="450" />
+      <edge id="248" source="SMinton" target="EWarren" weight="209" />
+    </edges>
+  </graph>
+</gexf>
